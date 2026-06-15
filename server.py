@@ -12,7 +12,7 @@ db = cliente["conecta_aprende"]
 usuarios = db["usuarios"]
 admins = db["admins"]
 
-# Ruta de prueba (para evitar "No encontrado")
+# Ruta principal
 @app.route("/")
 def home():
     return "Servidor Flask funcionando"
@@ -32,7 +32,7 @@ def registro():
         "mensaje": "Usuario registrado"
     })
 
-# Login de admin
+# Login administrador
 @app.route("/admin", methods=["POST"])
 def admin_login():
     datos = request.json
@@ -51,6 +51,6 @@ def admin_login():
         "login": False
     })
 
-# Ejecutar servidor
+# Ejecutar aplicación
 if __name__ == "__main__":
-    app.run(debug=True, port=3000)
+    app.run()
