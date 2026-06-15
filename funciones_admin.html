@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Panel Admin</title>
+
+    <style>
+      body {
+        font-family: Arial;
+        background: #1e1e2f;
+        color: white;
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      section {
+        background: #2a2a40;
+        padding: 15px;
+        border-radius: 10px;
+        width: 50%;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+      }
+
+      th,
+      td {
+        border: 1px solid #444;
+        padding: 8px;
+        text-align: left;
+      }
+
+      button {
+        margin: 2px;
+        padding: 5px 8px;
+        cursor: pointer;
+      }
+
+      input {
+        width: 100%;
+        margin: 5px 0;
+        padding: 6px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- USUARIOS -->
+    <section>
+      <h2>Usuarios</h2>
+      <button onclick="cargarUsuarios()">Actualizar</button>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaUsuarios"></tbody>
+      </table>
+    </section>
+
+    <!-- ADMINS -->
+    <section>
+      <h2>Admins</h2>
+      <button onclick="cargarAdmins()">Actualizar</button>
+
+      <div>
+        <input id="adminUser" placeholder="usuario" />
+        <input id="adminPass" placeholder="clave" />
+        <button onclick="crearAdmin()">Crear Admin</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Usuario</th>
+            <th>Clave</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaAdmins"></tbody>
+      </table>
+    </section>
+
+    <script>
+      const API = "http://localhost:5000";
+
+      /* ================= USUARIOS ================= */
+
+      function cargarUsuarios() {
+        fetch(`${API}/usuarios`)
+          .then((r) => r.json())
+          .then((data) => {
+            let html = "";
+            data.forEach((u) => {
+              html += `
+<tr>
+<td>${u.id}</td>
+<td><input value="${u.nombre}" id="nom-${u.id}"></td>
+<td><input value="${u.edad}" id="edad-${u.id}"></td>
+<td>
+<button onclick="editarUsuario('${u.id}')">Editar</button>
+<button onclick="eliminarUsuario('${u.id}')">Eliminar</button>
+</td>
+</tr>`;
+            });
+            document.getElementById("tablaUsuarios").innerHTML = html;
+          });
+      }
+
+      function editarUsuario(id) {
+        const nombre = document.getElementById("nom-" + id).value;
+        const edad = document.getElementById("edad-" + id).value;
+
+        fetch(`${API}/usuario/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre, edad }),
+        }).then(() => cargarUsuarios());
+      }
+
+      function eliminarUsuario(id) {
+        fetch(`${API}/usuario/${id}`, {
+          method: "DELETE",
+        }).then(() => cargarUsuarios());
+      }
+
+      /* ================= ADMINS ================= */
+
+      function cargarAdmins() {
+        fetch(`${API}/admins`)
+          .then((r) => r.json())
+          .then((data) => {
+            let html = "";
+            data.forEach((a) => {
+              html += `
+<tr>
+<td>${a.id}</td>
+<td><input value="${a.usuario}" id="user-${a.id}"></td>
+<td><input value="${a.clave}" id="pass-${a.id}"></td>
+<td>
+<button onclick="editarAdmin('${a.id}')">Editar</button>
+<button onclick="eliminarAdmin('${a.id}')">Eliminar</button>
+</td>
+</tr>`;
+            });
+            document.getElementById("tablaAdmins").innerHTML = html;
+          });
+      }
+
+      function crearAdmin() {
+        const usuario = document.getElementById("adminUser").value;
+        const clave = document.getElementById("adminPass").value;
+
+        fetch(`${API}/admin`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usuario, clave }),
+        }).then(() => cargarAdmins());
+      }
+
+      function editarAdmin(id) {
+        const usuario = document.getElementById("user-" + id).value;
+        const clave = document.getElementById("pass-" + id).value;
+
+        fetch(`${API}/admin/${id}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ usuario, clave }),
+        }).then(() => cargarAdmins());
+      }
+
+      function eliminarAdmin(id) {
+        fetch(`${API}/admin/${id}`, {
+          method: "DELETE",
+        }).then(() => cargarAdmins());
+      }
+
+      /* cargar al inicio */
+      cargarUsuarios();
+      cargarAdmins();
+    </script>
+  </body>
+</html>

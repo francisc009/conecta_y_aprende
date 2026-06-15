@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Administrador</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #241b45, #5e42a6);
+      }
+
+      .panel {
+        width: 450px;
+        background: white;
+        padding: 50px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo img {
+        width: 250px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        color: #312450;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666;
+        margin-bottom: 30px;
+      }
+
+      input {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 18px;
+        border: none;
+        background: #f3f3f3;
+        border-radius: 10px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        background: #5e42a6;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background: #312450;
+      }
+
+      .volver {
+        margin-top: 20px;
+      }
+
+      .volver a {
+        text-decoration: none;
+        color: #5e42a6;
+        font-weight: bold;
+      }
+
+      .error {
+        margin-top: 15px;
+        color: red;
+        display: none;
+      }
+
+      .ok {
+        margin-top: 15px;
+        color: green;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="panel">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" />
+      </div>
+
+      <h1>Administrador</h1>
+
+      <p>Acceso exclusivo para administración del sistema</p>
+
+      <input type="text" id="usuario" placeholder="Usuario" />
+
+      <input type="password" id="clave" placeholder="Contraseña" />
+
+      <button onclick="entrar()">Ingresar</button>
+
+      <div id="mensaje" class="error"></div>
+
+      <div class="volver">
+        <a href="inicio.html">Volver</a>
+      </div>
+    </div>
+
+    <script>
+      async function entrar() {
+        let usuario = document.getElementById("usuario").value.trim();
+        let clave = document.getElementById("clave").value.trim();
+
+        let mensaje = document.getElementById("mensaje");
+
+        mensaje.style.display = "none";
+
+        if (usuario === "" || clave === "") {
+          mensaje.innerText = "Completa todos los campos";
+          mensaje.style.display = "block";
+          return;
+        }
+
+        try {
+          let respuesta = await fetch("http://127.0.0.1:3000/admin", {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+              usuario,
+              clave,
+            }),
+          });
+
+          let datos = await respuesta.json();
+
+          if (datos.login) {
+            mensaje.className = "ok";
+            mensaje.innerText = "Acceso correcto";
+
+            mensaje.style.display = "block";
+
+            setTimeout(() => {
+              window.location.href = "funciones_admin.html";
+            }, 1000);
+          } else {
+            mensaje.className = "error";
+            mensaje.innerText = "Usuario o contraseña incorrectos";
+            mensaje.style.display = "block";
+          }
+        } catch (error) {
+          mensaje.className = "error";
+          mensaje.innerText = "No se pudo conectar con el servidor";
+          mensaje.style.display = "block";
+
+          console.log(error);
+        }
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          entrar();
+        }
+      });
+    </script>
+  </body>
+</html>
