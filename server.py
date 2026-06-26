@@ -19,9 +19,16 @@ def init_db():
         CREATE TABLE IF NOT EXISTS usuarios (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nombre TEXT NOT NULL,
-            edad INTEGER NOT NULL
+            edad INTEGER NOT NULL,
+            clave TEXT NOT NULL DEFAULT ''
         )
     """)
+    # Agregar columna clave si no existe (para bases de datos antiguas)
+    try:
+        conn.execute("ALTER TABLE usuarios ADD COLUMN clave TEXT NOT NULL DEFAULT ''")
+        conn.commit()
+    except Exception:
+        pass
     conn.execute("""
         CREATE TABLE IF NOT EXISTS admins (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -52,12 +59,12 @@ def static_files(filename):
 def registro():
     try:
         datos = request.json
-        if not datos.get("nombre") or not datos.get("edad"):
-            return jsonify({"ok": False, "mensaje": "Nombre y edad son obligatorios"}), 400
+        if not datos.get("nombre") or not datos.get("edad") or not datos.get("clave"):
+            return jsonify({"ok": False, "mensaje": "Nombre, edad y contraseña son obligatorios"}), 400
 
         conn = get_db()
-        conn.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)",
-                     (datos["nombre"], int(datos["edad"])))
+        conn.execute("INSERT INTO usuarios (nombre, edad, clave) VALUES (?, ?, ?)",
+                     (datos["nombre"], int(datos["edad"]), datos["clave"]))
         conn.commit()
         conn.close()
         return jsonify({"ok": True, "mensaje": "Usuario registrado"})
@@ -154,9 +161,9 @@ def crear_usuario():
 def obtener_usuarios():
     try:
         conn = get_db()
-        rows = conn.execute("SELECT id, nombre, edad FROM usuarios").fetchall()
+        rows = conn.execute("SELECT id, nombre, edad, clave FROM usuarios").fetchall()
         conn.close()
-        return jsonify([{"id": str(r["id"]), "nombre": r["nombre"], "edad": r["edad"]} for r in rows])
+        return jsonify([{"id": str(r["id"]), "nombre": r["nombre"], "edad": r["edad"], "clave": r["clave"]} for r in rows])
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -165,8 +172,8 @@ def editar_usuario(id):
     try:
         datos = request.json
         conn = get_db()
-        conn.execute("UPDATE usuarios SET nombre = ?, edad = ? WHERE id = ?",
-                     (datos.get("nombre"), int(datos.get("edad")), int(id)))
+        conn.execute("UPDATE usuarios SET nombre = ?, edad = ?, clave = ? WHERE id = ?",
+                     (datos.get("nombre"), int(datos.get("edad")), datos.get("clave", ""), int(id)))
         conn.commit()
         conn.close()
         return jsonify({"ok": True, "mensaje": "Usuario actualizado"})

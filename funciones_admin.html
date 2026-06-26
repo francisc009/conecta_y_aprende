@@ -5,13 +5,49 @@
     <title>Panel Admin</title>
 
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         font-family: Arial;
         background: #1e1e2f;
         color: white;
+        padding: 20px;
+        margin: 0;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .topbar h1 {
+        font-size: 1.4em;
+        color: #c9b8ff;
+      }
+
+      .btn-volver {
+        background: #5e42a6;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        text-decoration: none;
+        transition: 0.2s;
+      }
+
+      .btn-volver:hover {
+        background: #312450;
+      }
+
+      .paneles {
         display: flex;
         gap: 20px;
-        padding: 20px;
       }
 
       section {
@@ -19,81 +55,142 @@
         padding: 15px;
         border-radius: 10px;
         width: 50%;
+        overflow-x: auto;
       }
 
       h2 {
         margin-bottom: 10px;
+        color: #c9b8ff;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
         margin-top: 10px;
+        font-size: 13px;
       }
 
-      th,
-      td {
+      th, td {
         border: 1px solid #444;
-        padding: 8px;
+        padding: 6px 8px;
         text-align: left;
+        vertical-align: middle;
+      }
+
+      th {
+        background: #1e1e2f;
+        color: #c9b8ff;
       }
 
       button {
         margin: 2px;
-        padding: 5px 8px;
+        padding: 4px 8px;
         cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        font-size: 12px;
+      }
+
+      .btn-editar {
+        background: #5e42a6;
+        color: white;
+      }
+
+      .btn-eliminar {
+        background: #a64242;
+        color: white;
+      }
+
+      .btn-actualizar {
+        background: #3a3a5c;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        margin-bottom: 10px;
+      }
+
+      .btn-crear {
+        background: #42a663;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        margin-top: 5px;
+        width: 100%;
       }
 
       input {
+        background: #1e1e2f;
+        border: 1px solid #555;
+        color: white;
+        padding: 4px 6px;
+        border-radius: 4px;
         width: 100%;
-        margin: 5px 0;
-        padding: 6px;
+        font-size: 12px;
+      }
+
+      .form-nuevo {
+        background: #1e1e2f;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+      }
+
+      .form-nuevo input {
+        margin-bottom: 6px;
       }
     </style>
   </head>
 
   <body>
-    <!-- USUARIOS -->
-    <section>
-      <h2>Usuarios</h2>
-      <button onclick="cargarUsuarios()">Actualizar</button>
+    <div class="topbar">
+      <h1>Panel de Administración</h1>
+      <a href="inicio.html" class="btn-volver">← Volver al inicio</a>
+    </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Edad</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="tablaUsuarios"></tbody>
-      </table>
-    </section>
+    <div class="paneles">
+      <!-- USUARIOS -->
+      <section>
+        <h2>Usuarios</h2>
+        <button class="btn-actualizar" onclick="cargarUsuarios()">↻ Actualizar</button>
 
-    <!-- ADMINS -->
-    <section>
-      <h2>Admins</h2>
-      <button onclick="cargarAdmins()">Actualizar</button>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Contraseña</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaUsuarios"></tbody>
+        </table>
+      </section>
 
-      <div>
-        <input id="adminUser" placeholder="usuario" />
-        <input id="adminPass" placeholder="clave" />
-        <button onclick="crearAdmin()">Crear Admin</button>
-      </div>
+      <!-- ADMINS -->
+      <section>
+        <h2>Admins</h2>
+        <button class="btn-actualizar" onclick="cargarAdmins()">↻ Actualizar</button>
 
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Usuario</th>
-            <th>Clave</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="tablaAdmins"></tbody>
-      </table>
-    </section>
+        <div class="form-nuevo">
+          <input id="adminUser" placeholder="Nuevo usuario" />
+          <input id="adminPass" placeholder="Nueva clave" type="password" />
+          <button class="btn-crear" onclick="crearAdmin()">+ Crear Admin</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Usuario</th>
+              <th>Clave</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaAdmins"></tbody>
+        </table>
+      </section>
+    </div>
 
     <script>
       const API = "";
@@ -108,34 +205,35 @@
             data.forEach((u) => {
               html += `
 <tr>
-<td>${u.id}</td>
-<td><input value="${u.nombre}" id="nom-${u.id}"></td>
-<td><input value="${u.edad}" id="edad-${u.id}"></td>
-<td>
-<button onclick="editarUsuario('${u.id}')">Editar</button>
-<button onclick="eliminarUsuario('${u.id}')">Eliminar</button>
-</td>
+  <td>${u.id}</td>
+  <td><input value="${u.nombre}" id="nom-${u.id}"></td>
+  <td><input value="${u.edad}" id="edad-${u.id}" type="number" style="width:60px"></td>
+  <td><input value="${u.clave || ''}" id="clave-${u.id}" type="text"></td>
+  <td>
+    <button class="btn-editar" onclick="editarUsuario('${u.id}')">Editar</button>
+    <button class="btn-eliminar" onclick="eliminarUsuario('${u.id}')">Eliminar</button>
+  </td>
 </tr>`;
             });
-            document.getElementById("tablaUsuarios").innerHTML = html;
+            document.getElementById("tablaUsuarios").innerHTML = html || "<tr><td colspan='5' style='text-align:center;color:#888'>Sin usuarios</td></tr>";
           });
       }
 
       function editarUsuario(id) {
         const nombre = document.getElementById("nom-" + id).value;
         const edad = document.getElementById("edad-" + id).value;
+        const clave = document.getElementById("clave-" + id).value;
 
         fetch(`${API}/usuario/${id}`, {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ nombre, edad }),
+          body: JSON.stringify({ nombre, edad, clave }),
         }).then(() => cargarUsuarios());
       }
 
       function eliminarUsuario(id) {
-        fetch(`${API}/usuario/${id}`, {
-          method: "DELETE",
-        }).then(() => cargarUsuarios());
+        if (!confirm("¿Eliminar este usuario?")) return;
+        fetch(`${API}/usuario/${id}`, { method: "DELETE" }).then(() => cargarUsuarios());
       }
 
       /* ================= ADMINS ================= */
@@ -148,13 +246,13 @@
             data.forEach((a) => {
               html += `
 <tr>
-<td>${a.id}</td>
-<td><input value="${a.usuario}" id="user-${a.id}"></td>
-<td><input value="${a.clave}" id="pass-${a.id}"></td>
-<td>
-<button onclick="editarAdmin('${a.id}')">Editar</button>
-<button onclick="eliminarAdmin('${a.id}')">Eliminar</button>
-</td>
+  <td>${a.id}</td>
+  <td><input value="${a.usuario}" id="user-${a.id}"></td>
+  <td><input value="${a.clave}" id="pass-${a.id}"></td>
+  <td>
+    <button class="btn-editar" onclick="editarAdmin('${a.id}')">Editar</button>
+    <button class="btn-eliminar" onclick="eliminarAdmin('${a.id}')">Eliminar</button>
+  </td>
 </tr>`;
             });
             document.getElementById("tablaAdmins").innerHTML = html;
@@ -164,12 +262,17 @@
       function crearAdmin() {
         const usuario = document.getElementById("adminUser").value;
         const clave = document.getElementById("adminPass").value;
+        if (!usuario || !clave) { alert("Completa usuario y clave"); return; }
 
         fetch(`${API}/admin`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ usuario, clave }),
-        }).then(() => cargarAdmins());
+        }).then(() => {
+          document.getElementById("adminUser").value = "";
+          document.getElementById("adminPass").value = "";
+          cargarAdmins();
+        });
       }
 
       function editarAdmin(id) {
@@ -184,12 +287,10 @@
       }
 
       function eliminarAdmin(id) {
-        fetch(`${API}/admin/${id}`, {
-          method: "DELETE",
-        }).then(() => cargarAdmins());
+        if (!confirm("¿Eliminar este administrador?")) return;
+        fetch(`${API}/admin/${id}`, { method: "DELETE" }).then(() => cargarAdmins());
       }
 
-      /* cargar al inicio */
       cargarUsuarios();
       cargarAdmins();
     </script>

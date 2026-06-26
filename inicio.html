@@ -131,6 +131,7 @@
         <h2>Registro</h2>
         <input type="text" id="nombre" placeholder="Nombre" />
         <input type="number" id="edad" placeholder="Edad" min="1" />
+        <input type="password" id="clave" placeholder="Contraseña" />
         <button onclick="registrar()">Ingresar</button>
 
         <div id="mensaje" class="mensaje"></div>
@@ -145,11 +146,12 @@
       async function registrar() {
         const nombre = document.getElementById("nombre").value.trim();
         const edad = document.getElementById("edad").value.trim();
+        const clave = document.getElementById("clave").value.trim();
         const msg = document.getElementById("mensaje");
 
         msg.style.display = "none";
 
-        if (!nombre || !edad) {
+        if (!nombre || !edad || !clave) {
           msg.className = "mensaje error";
           msg.innerText = "Completa todos los campos";
           msg.style.display = "block";
@@ -160,7 +162,7 @@
           const respuesta = await fetch("/registro", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nombre, edad: parseInt(edad) }),
+            body: JSON.stringify({ nombre, edad: parseInt(edad), clave }),
           });
 
           const datos = await respuesta.json();
