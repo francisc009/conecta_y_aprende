@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mi Cuenta — Conecta y Aprende</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      /* ── Tarjeta de cuenta ────────────────────────────────── */
+      .cuenta-card {
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 16px;
+        padding: 32px 36px;
+        margin-bottom: 28px;
+      }
+      .avatar {
+        width: 80px; height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #5e42a6, #312450);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 2.2em; margin-bottom: 18px;
+      }
+      .dato { display: flex; gap: 12px; align-items: center; margin: 8px 0; font-size: 1em; }
+      .dato strong { min-width: 70px; opacity: 0.7; }
+
+      /* ── Barra de progreso ───────────────────────────────── */
+      .barra-wrap {
+        background: rgba(255,255,255,0.1);
+        border-radius: 50px; height: 22px;
+        overflow: hidden; margin: 14px 0 8px;
+      }
+      .barra-fill {
+        height: 100%; border-radius: 50px;
+        background: linear-gradient(90deg, #6a4fc8, #a07ed4);
+        transition: width 0.8s ease;
+        display: flex; align-items: center; justify-content: flex-end;
+        padding-right: 8px; font-size: 0.75em; font-weight: bold;
+        white-space: nowrap; min-width: 0;
+      }
+
+      /* ── Módulos estado ──────────────────────────────────── */
+      .modulos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px; margin-top: 20px;
+      }
+      .modulo-chip {
+        border-radius: 12px;
+        padding: 18px 20px;
+        border: 1px solid rgba(255,255,255,0.15);
+        transition: transform 0.2s;
+      }
+      .modulo-chip:hover { transform: translateY(-2px); }
+      .modulo-chip.completado {
+        background: rgba(80,200,120,0.12);
+        border-color: rgba(80,200,120,0.35);
+      }
+      .modulo-chip.pendiente {
+        background: rgba(255,255,255,0.04);
+      }
+      .modulo-chip .icono { font-size: 1.6em; margin-bottom: 8px; }
+      .modulo-chip h4 { margin: 0 0 4px; font-size: 0.95em; }
+      .modulo-chip .puntaje { font-size: 0.85em; opacity: 0.75; }
+      .badge-ok  { display: inline-block; background: rgba(80,200,120,0.25); color: #7eeaaa; padding: 2px 10px; border-radius: 20px; font-size: 0.78em; margin-top: 6px; }
+      .badge-no  { display: inline-block; background: rgba(255,255,255,0.08); color: #aaa; padding: 2px 10px; border-radius: 20px; font-size: 0.78em; margin-top: 6px; }
+
+      /* ── Frase motivadora ────────────────────────────────── */
+      .frase-box {
+        border-left: 4px solid #7b5ea7;
+        padding: 16px 20px;
+        background: rgba(123,94,167,0.12);
+        border-radius: 0 12px 12px 0;
+        margin-bottom: 28px;
+        font-style: italic;
+        font-size: 1.05em;
+        line-height: 1.7;
+      }
+
+      /* ── Botón cerrar sesión ─────────────────────────────── */
+      .btn-cerrar {
+        display: inline-block;
+        padding: 10px 24px;
+        border-radius: 8px;
+        background: rgba(200,60,60,0.2);
+        border: 1px solid rgba(200,60,60,0.4);
+        color: #ff8a8a;
+        cursor: pointer;
+        font-size: 0.9em;
+        transition: background 0.2s;
+      }
+      .btn-cerrar:hover { background: rgba(200,60,60,0.35); }
+    </style>
+  </head>
+  <body class="is-preload">
+
+    <header id="header">
+      <a href="index.html" class="title">Mi Cuenta</a>
+      <nav><ul>
+        <li><a href="index.html">← Inicio</a></li>
+        <li><a href="mi_cuenta.html" class="active">Mi Cuenta</a></li>
+      </ul></nav>
+    </header>
+
+    <div id="wrapper">
+      <section id="main" class="wrapper">
+        <div class="inner">
+
+          <h1 class="major" id="titulo-bienvenida">Mi Cuenta</h1>
+
+          <!-- Frase motivadora -->
+          <div class="frase-box" id="frase-motivadora">Cargando...</div>
+
+          <!-- Datos del usuario -->
+          <div class="cuenta-card">
+            <div class="avatar" style="font-size:1.4em; font-weight:bold; color:white;">U</div>
+            <h3 id="user-nombre" style="margin:0 0 12px;">Cargando...</h3>
+            <div class="dato"><strong>Nombre:</strong> <span id="dato-nombre">—</span></div>
+            <div class="dato"><strong>Edad:</strong>   <span id="dato-edad">—</span></div>
+            <div style="margin-top: 18px;">
+              <button class="btn-cerrar" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+          </div>
+
+          <!-- Progreso -->
+          <h2>Tu progreso</h2>
+          <div class="cuenta-card">
+            <p id="progreso-texto" style="margin-bottom:8px;">Cargando...</p>
+            <div class="barra-wrap">
+              <div class="barra-fill" id="barra-fill" style="width:0%"></div>
+            </div>
+            <p style="font-size:0.85em; opacity:0.6; margin-top:4px;">Necesitas completar el quiz de cada módulo con al menos 60% para marcarlo como terminado.</p>
+
+            <div class="modulos-grid" id="modulos-grid"></div>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <footer id="footer" class="wrapper alt">
+      <div class="inner">
+        <ul class="menu"><li>Conecta y Aprende — Mecánica Automotriz</li></ul>
+      </div>
+    </footer>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      const MODULOS_INFO = [
+        { num: 1, nombre: "Introducción a la Mecánica",  href: "modulo_1.html", icono: "1" },
+        { num: 2, nombre: "Mantenimiento Preventivo",    href: "modulo_2.html", icono: "2" },
+        { num: 3, nombre: "Sistemas del Automóvil",      href: "modulo_3.html", icono: "3" },
+        { num: 4, nombre: "Diagnóstico Básico",          href: "modulo_4.html", icono: "4" }
+      ];
+
+      const FRASES = [
+        { min: 0, max: 0, texto: "\"El primer paso es el más importante. Cada gran logro comienza con la decisión de intentarlo. ¡Tú puedes!\"" },
+        { min: 1, max: 1, texto: "\"¡Ya diste el primer paso! El camino del aprendizaje se recorre uno a la vez. Sigue adelante.\"" },
+        { min: 2, max: 2, texto: "\"¡A mitad del camino! Tu esfuerzo y constancia te han traído hasta aquí. No te detengas.\"" },
+        { min: 3, max: 3, texto: "\"¡Casi lo logras! Estás a un paso de completar el curso. Tu dedicación es un ejemplo.\"" },
+        { min: 4, max: 4, texto: "\"¡Lo lograste! Completaste todos los módulos. Eres la prueba de que el esfuerzo siempre vale la pena. ¡Felicitaciones!\"" }
+      ];
+
+      function cerrarSesion() {
+        localStorage.removeItem("usuario_conecta");
+        window.location.href = "inicio.html";
+      }
+
+      async function cargarCuenta() {
+        const usuario = JSON.parse(localStorage.getItem("usuario_conecta") || "null");
+        if (!usuario) {
+          window.location.href = "inicio.html";
+          return;
+        }
+
+        // Datos básicos del usuario
+        document.getElementById("titulo-bienvenida").textContent = "Hola, " + usuario.nombre;
+        document.getElementById("user-nombre").textContent = usuario.nombre;
+        document.getElementById("dato-nombre").textContent = usuario.nombre;
+
+        // Cargar datos completos del servidor
+        try {
+          const resUsuarios = await fetch("/usuarios");
+          const todos = await resUsuarios.json();
+          const yo = todos.find(u => u.id === usuario.id || u.id === String(usuario.id));
+          if (yo) {
+            document.getElementById("dato-edad").textContent = yo.edad + " años";
+          }
+        } catch(e) {}
+
+        // Cargar progreso
+        try {
+          const resProgreso = await fetch("/progreso/" + usuario.id);
+          const progreso = await resProgreso.json();
+
+          const completados = progreso.length;
+          const porcentaje  = Math.round((completados / 4) * 100);
+
+          // Frase motivadora
+          const fraseDef = FRASES.find(f => completados >= f.min && completados <= f.max);
+          if (fraseDef) document.getElementById("frase-motivadora").textContent = fraseDef.texto;
+
+          // Barra
+          document.getElementById("barra-fill").style.width = porcentaje + "%";
+          document.getElementById("barra-fill").textContent = porcentaje > 10 ? porcentaje + "%" : "";
+          document.getElementById("progreso-texto").textContent =
+            completados === 4
+              ? "¡Completaste todos los módulos!"
+              : completados + " de 4 módulos completados";
+
+          // Chips de módulos
+          const grid = document.getElementById("modulos-grid");
+          grid.innerHTML = MODULOS_INFO.map(m => {
+            const p = progreso.find(pr => pr.modulo === m.num);
+            const hecho = !!p;
+            return `<div class="modulo-chip ${hecho ? "completado" : "pendiente"}">
+              <div class="icono" style="font-size:1em; font-weight:bold; opacity:0.6;">Modulo ${m.icono}</div>
+              <h4>Módulo ${m.num}</h4>
+              <p style="font-size:0.85em; opacity:0.75; margin:0 0 4px;">${m.nombre}</p>
+              ${hecho
+                ? `<div class="puntaje">Puntaje: <strong>${p.puntaje}%</strong></div>
+                   <span class="badge-ok">Completado</span>`
+                : `<span class="badge-no">Pendiente</span>`
+              }
+              <br/><a href="${m.href}" style="font-size:0.8em; margin-top:8px; display:inline-block;">
+                ${hecho ? "Repasar →" : "Empezar →"}
+              </a>
+            </div>`;
+          }).join("");
+
+        } catch(e) {
+          document.getElementById("frase-motivadora").textContent =
+            "\"Cada día es una nueva oportunidad para aprender y crecer.\"";
+        }
+      }
+
+      cargarCuenta();
+    </script>
+  </body>
+</html>

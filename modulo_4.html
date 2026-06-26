@@ -6,243 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      .quiz-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+      .quiz-box p { font-weight: bold; margin-bottom: 12px; }
+      .quiz-box label { display: block; margin: 6px 0; cursor: pointer; padding: 6px 10px; border-radius: 6px; transition: background 0.2s; }
+      .quiz-box label:hover { background: rgba(255,255,255,0.1); }
+      .quiz-box label.correcta { background: rgba(80,200,80,0.25); }
+      .quiz-box label.incorrecta { background: rgba(200,80,80,0.25); }
+      #resultado-quiz { display:none; margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; }
+      #resultado-quiz h3 { font-size: 1.4em; margin-bottom: 8px; }
+      .btn-quiz { margin-top: 10px; padding: 12px 30px; background: #5e42a6; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+      .btn-quiz:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
   </head>
-
   <body class="is-preload">
     <header id="header">
       <a href="index.html" class="title">Módulo 4</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="modulo_4.html" class="active">Diagnóstico</a></li>
-        </ul>
-      </nav>
+      <nav><ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="modulo_4.html" class="active">Diagnóstico</a></li>
+      </ul></nav>
     </header>
 
     <div id="wrapper">
       <section id="main" class="wrapper">
         <div class="inner">
-          <h1 class="major">Diagnóstico Básico</h1>
+          <h1 class="major">Diagnóstico Básico del Automóvil</h1>
 
-          <p>
-            El diagnóstico básico automotriz es un proceso que consiste en
-            observar, analizar e identificar cambios en el funcionamiento del
-            vehículo para comprender mejor su estado general. Antes de realizar
-            cualquier mantenimiento o procedimiento es importante conocer cómo
-            se comporta el automóvil y reconocer señales que puedan indicar
-            desgaste o necesidad de revisión.
-          </p>
-
-          <p>
-            Aprender a realizar diagnósticos ayuda a desarrollar habilidades de
-            observación, organización y seguimiento de procesos. Estas
-            habilidades favorecen el trabajo seguro y permiten comprender mejor
-            el funcionamiento de los sistemas automotrices.
-          </p>
+          <p>El diagnóstico básico automotriz consiste en observar, analizar e identificar cambios en el funcionamiento de un vehículo. Es el primer paso para tomar decisiones sobre el mantenimiento o reparación que un vehículo necesita.</p>
 
           <hr />
-
-          <h2>Importancia del diagnóstico automotriz</h2>
-
-          <p>
-            El diagnóstico permite identificar situaciones antes de que se
-            conviertan en problemas mayores. Muchas veces un cambio pequeño
-            puede ser una señal que indique la necesidad de revisar algún
-            componente o realizar mantenimiento.
-          </p>
-
-          <p>
-            Observar y registrar información ayuda a comprender mejor el
-            comportamiento del vehículo y permite tomar decisiones de manera
-            organizada.
-          </p>
-
-          <p>
-            Aplicar revisiones periódicas favorece el funcionamiento del
-            automóvil y contribuye a conservar mejores condiciones generales.
-          </p>
+          <h2>Importancia del diagnóstico</h2>
+          <p>El diagnóstico permite identificar situaciones antes de que se conviertan en problemas mayores. Muchas veces un cambio pequeño puede ser una señal que indique la necesidad de revisar algún componente o realizar mantenimiento. Observar y registrar información ayuda a comprender mejor el comportamiento del vehículo.</p>
 
           <hr />
-
-          <h2>Identificación de señales y cambios</h2>
-
-          <p>
-            Una parte importante del diagnóstico consiste en prestar atención a
-            señales que puedan indicar diferencias respecto al funcionamiento
-            habitual del vehículo.
-          </p>
-
-          <p>
-            Algunas observaciones comunes pueden incluir sonidos diferentes,
-            vibraciones, cambios de temperatura, disminución del rendimiento o
-            indicadores visibles en el tablero.
-          </p>
-
-          <p>Estas señales funcionan como referencias para continuar una revisión de manera organizada.</p>
+          <h2>Paso 1: Observación inicial</h2>
+          <p>Consiste en hacer una revisión general del estado del vehículo antes de encenderlo. Se identifican señales visibles como manchas de líquidos, deformaciones o daños. Esta etapa permite tener un panorama inicial del estado del vehículo.</p>
 
           <hr />
-
-          <h2>Pasos para realizar un diagnóstico básico</h2>
-
-          <h3>1. Observación inicial</h3>
-          <p>
-            Antes de revisar componentes se recomienda observar el estado
-            general del vehículo. Se puede prestar atención a limpieza,
-            condiciones visibles y comportamiento exterior.
-          </p>
-
-          <h3>2. Escuchar y comparar</h3>
-          <p>
-            Al encender el automóvil se observan sonidos, vibraciones y
-            comportamiento general para identificar posibles cambios.
-          </p>
-
-          <h3>3. Revisar el tablero</h3>
-          <p>
-            El tablero muestra información importante relacionada con
-            temperatura, niveles y funcionamiento general del automóvil.
-          </p>
-
-          <h3>4. Revisar condiciones generales</h3>
-          <p>
-            Posteriormente se realiza una observación del estado general para
-            identificar señales adicionales.
-          </p>
-
-          <h3>5. Registrar observaciones</h3>
-          <p>Tomar notas ayuda a comparar resultados y mantener seguimiento del proceso.</p>
+          <h2>Paso 2: Revisión del tablero</h2>
+          <p>El tablero de instrumentos proporciona información clave cuando el motor está encendido: temperatura del motor, niveles de combustible y presión de aceite. Las luces indicadoras señalan condiciones específicas que requieren atención.</p>
 
           <hr />
-
-          <h2>Revisión del tablero</h2>
-
-          <p>
-            El tablero funciona como una fuente de información que ayuda a
-            conocer condiciones del vehículo durante su funcionamiento.
-          </p>
-
-          <p>
-            Observar indicadores permite identificar cambios y comprender mejor
-            el estado general del automóvil.
-          </p>
-
-          <p>
-            Cuando aparece una señal diferente se recomienda realizar una
-            revisión antes de continuar utilizando el vehículo.
-          </p>
+          <h2>Paso 3: Escucha activa</h2>
+          <p>Se escuchan los ruidos que produce el vehículo durante su funcionamiento. Distintos tipos de sonidos pueden indicar situaciones específicas: golpeteo, silbido, vibración o rechinado.</p>
 
           <hr />
-
-          <h2>Uso responsable de herramientas</h2>
-
-          <p>
-            Las herramientas ayudan a realizar revisiones y observaciones con
-            mayor orden. Utilizarlas correctamente mejora seguridad y facilita
-            el desarrollo de procedimientos.
-          </p>
-
-          <p>
-            También es importante mantener limpieza y organización para
-            conservar mejores condiciones de trabajo.
-          </p>
+          <h2>Paso 4: Registro de observaciones</h2>
+          <p>Registrar las observaciones ayuda a comparar resultados, comunicar hallazgos al mecánico y mantener un seguimiento del estado del vehículo a lo largo del tiempo.</p>
 
           <hr />
-
           <h2>Mantenimiento programado</h2>
-
-          <p>
-            El mantenimiento programado consiste en realizar revisiones
-            organizadas para conservar funcionamiento y prevenir cambios
-            mayores.
-          </p>
-
-          <p>
-            Entre las actividades más comunes se encuentran observación general,
-            control de niveles y seguimiento del estado del automóvil.
-          </p>
-
-          <p>Aplicar revisiones frecuentes ayuda a desarrollar hábitos de cuidado y organización.</p>
+          <p>El mantenimiento programado favorece conservar el funcionamiento del vehículo y prevenir cambios mayores. Seguir los intervalos recomendados reduce el riesgo de fallas inesperadas.</p>
 
           <hr />
+          <h2 id="actividad">Actividad final — Quiz del Módulo 4</h2>
+          <p>Responde las 5 preguntas para completar el módulo. Necesitas al menos 3 correctas para aprobar.</p>
 
-          <h2>Ejemplo práctico</h2>
-
-          <p>
-            Si un vehículo presenta dificultad para encender, el primer paso
-            consiste en observar el comportamiento general y registrar señales
-            visibles.
-          </p>
-
-          <p>
-            Después se revisan indicadores y se continúa con una evaluación
-            organizada para comprender mejor la situación antes de tomar
-            decisiones.
-          </p>
-
-          <p>Seguir un proceso ayuda a mejorar la comprensión y favorece el aprendizaje automotriz.</p>
-
-          <hr />
-
-          <h2>Conclusiones</h2>
-
-          <p>
-            El diagnóstico básico es una herramienta que ayuda a comprender
-            mejor el funcionamiento del automóvil mediante observación y
-            seguimiento de procedimientos.
-          </p>
-
-          <p>
-            Desarrollar esta habilidad permite mejorar la organización,
-            fortalecer conocimientos y conservar mejores condiciones del
-            vehículo.
-          </p>
-
-          <hr />
-
-          <h2>Resultado esperado</h2>
-
-          <p>
-            Al finalizar este módulo se comprenderá el proceso básico del
-            diagnóstico automotriz y la importancia de observar cambios para
-            mantener el funcionamiento adecuado del vehículo.
-          </p>
-
-          <hr />
-
-          <h2>Actividad final</h2>
-
-          <p>Responde el siguiente formulario para reforzar el aprendizaje.</p>
-
-          <div style="text-align: center">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScnwB8VZO4jFYaS_o6qVeCNt8x5NdjPHF5KaJrmp-f4GjE7CQ/viewform"
-              target="_blank"
-              class="button primary"
-            >
-              Responder formulario
-            </a>
-          </div>
-
-          <br />
-
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLScnwB8VZO4jFYaS_o6qVeCNt8x5NdjPHF5KaJrmp-f4GjE7CQ/viewform?embedded=true"
-            width="100%"
-            height="700"
-            frameborder="0"
-          >
-            Cargando formulario...
-          </iframe>
+          <div id="quiz-area"></div>
+          <button class="btn-quiz" id="btn-enviar" onclick="enviarQuiz()">Enviar respuestas</button>
+          <div id="resultado-quiz"></div>
         </div>
       </section>
     </div>
 
     <footer id="footer" class="wrapper alt">
       <div class="inner">
-        <ul class="menu">
-          <li>Capacitación en Mecánica Automotriz</li>
-          <li>Módulo 4</li>
-        </ul>
+        <ul class="menu"><li>Capacitación en Mecánica Automotriz</li><li>Módulo 4</li></ul>
       </div>
     </footer>
 
@@ -253,5 +83,91 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      const MODULO = 4;
+      const PREGUNTAS = [
+        {
+          texto: "¿En qué consiste el diagnóstico básico automotriz?",
+          opciones: ["Cambiar piezas del motor sin revisar", "Observar, analizar e identificar cambios en el funcionamiento", "Solo pintar el automóvil", "Encender y apagar el auto repetidamente"],
+          correcta: 1
+        },
+        {
+          texto: "¿Cuál es el primer paso del diagnóstico básico?",
+          opciones: ["Revisar el tablero con el motor encendido", "Registrar observaciones en papel", "Observación inicial del vehículo antes de encenderlo", "Llamar al mecánico inmediatamente"],
+          correcta: 2
+        },
+        {
+          texto: "¿Para qué sirve registrar las observaciones durante el diagnóstico?",
+          opciones: ["Para hacer el trabajo más lento", "No tiene ninguna utilidad", "Para comparar resultados y mantener seguimiento del vehículo", "Solo para mostrárselo al dueño"],
+          correcta: 2
+        },
+        {
+          texto: "¿Qué información proporciona el tablero de instrumentos?",
+          opciones: ["Solo la velocidad del vehículo", "Temperatura, niveles y condiciones del funcionamiento", "El nombre del mecánico asignado", "El precio del combustible"],
+          correcta: 1
+        },
+        {
+          texto: "¿Qué favorece el mantenimiento programado?",
+          opciones: ["Aumentar el consumo de combustible", "Que el vehículo falle más seguido", "Conservar el funcionamiento y prevenir cambios mayores", "Ninguna de las anteriores"],
+          correcta: 2
+        }
+      ];
+
+      function renderQuiz() {
+        let html = "";
+        PREGUNTAS.forEach((p, i) => {
+          html += `<div class="quiz-box"><p>${i+1}. ${p.texto}</p>`;
+          p.opciones.forEach((op, j) => {
+            html += `<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
+          });
+          html += `</div>`;
+        });
+        document.getElementById("quiz-area").innerHTML = html;
+      }
+
+      function enviarQuiz() {
+        let correctas = 0, completo = true;
+        PREGUNTAS.forEach((p, i) => {
+          const sel = document.querySelector(`input[name="q${i}"]:checked`);
+          if (!sel) { completo = false; return; }
+          const etiquetas = document.querySelectorAll(`input[name="q${i}"]`);
+          etiquetas.forEach(r => r.disabled = true);
+          const selLabel = sel.parentElement;
+          const corrLabel = etiquetas[p.correcta].parentElement;
+          corrLabel.classList.add("correcta");
+          if (parseInt(sel.value) === p.correcta) correctas++;
+          else selLabel.classList.add("incorrecta");
+        });
+
+        if (!completo) { alert("Por favor responde todas las preguntas."); return; }
+
+        document.getElementById("btn-enviar").disabled = true;
+        const puntaje = Math.round((correctas / PREGUNTAS.length) * 100);
+        const aprobado = correctas >= 3;
+        const res = document.getElementById("resultado-quiz");
+        res.style.display = "block";
+        res.style.background = aprobado ? "rgba(50,150,50,0.25)" : "rgba(150,50,50,0.25)";
+        res.style.border = `1px solid ${aprobado ? "rgba(80,200,80,0.4)" : "rgba(200,80,80,0.4)"}`;
+        res.innerHTML = `
+          <h3>${aprobado ? "¡Módulo completado!" : "Sigue estudiando"}</h3>
+          <p>Obtuviste <strong>${correctas} de ${PREGUNTAS.length}</strong> respuestas correctas (${puntaje}%)</p>
+          ${aprobado ? "<p>Regresando al inicio en 4 segundos...</p>" : "<p>Repasa el contenido y vuelve a intentarlo.</p>"}
+        `;
+
+        const usuario = JSON.parse(localStorage.getItem("usuario_conecta") || "null");
+        if (usuario) {
+          fetch("/progreso", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ usuario_id: usuario.id, modulo: MODULO, puntaje })
+          });
+        }
+
+        if (aprobado) setTimeout(() => { window.location.href = "index.html"; }, 4000);
+        res.scrollIntoView({ behavior: "smooth" });
+      }
+
+      renderQuiz();
+    </script>
   </body>
 </html>

@@ -4,15 +4,8 @@
     <title>Conecta y Aprende</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial;
-      }
-
+      * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial; }
       body {
         min-height: 100vh;
         display: flex;
@@ -20,16 +13,14 @@
         align-items: center;
         background: linear-gradient(135deg, #312450, #5e42a6);
       }
-
       .contenedor {
         width: 900px;
         background: white;
         border-radius: 25px;
         overflow: hidden;
         display: flex;
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.3);
       }
-
       .info {
         flex: 1;
         padding: 60px;
@@ -39,40 +30,68 @@
         flex-direction: column;
         justify-content: center;
       }
-
-      .info h1 {
-        font-size: 3em;
-        margin-bottom: 20px;
+      .info h1 { font-size: 2.8em; margin-bottom: 20px; }
+      .info p { line-height: 1.8; opacity: 0.9; }
+      .formulario { flex: 1; padding: 45px 50px; }
+      .tabs {
+        display: flex;
+        margin-bottom: 28px;
+        border-bottom: 2px solid #eee;
       }
-
-      .info p {
-        line-height: 1.8;
-      }
-
-      .formulario {
+      .tab {
         flex: 1;
-        padding: 50px;
+        padding: 12px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        color: #999;
+        transition: 0.2s;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -2px;
       }
-
-      .formulario h2 {
-        margin-bottom: 30px;
-        color: #312450;
+      .tab.activo { color: #5e42a6; border-bottom-color: #5e42a6; }
+      .campo-clave {
+        position: relative;
+        margin-bottom: 16px;
       }
-
+      .campo-clave input {
+        width: 100%;
+        padding: 14px 45px 14px 14px;
+        border: none;
+        background: #f2f2f2;
+        border-radius: 10px;
+        font-size: 15px;
+        outline: none;
+        margin-bottom: 0;
+      }
+      .ojo {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #888;
+        font-size: 18px;
+        padding: 4px;
+        line-height: 1;
+      }
+      .ojo:hover { color: #5e42a6; }
       input {
         width: 100%;
-        padding: 15px;
-        margin-bottom: 20px;
+        padding: 14px;
+        margin-bottom: 16px;
         border: none;
         background: #f2f2f2;
         border-radius: 10px;
         font-size: 15px;
         outline: none;
       }
-
-      button {
+      button.principal {
         width: 100%;
-        padding: 15px;
+        padding: 14px;
         border: none;
         border-radius: 10px;
         background: #5e42a6;
@@ -81,60 +100,57 @@
         cursor: pointer;
         transition: 0.3s;
       }
-
-      button:hover {
-        background: #312450;
-      }
-
-      .admin {
-        margin-top: 20px;
-        text-align: center;
-      }
-
-      .admin a {
-        text-decoration: none;
-        color: #5e42a6;
-        font-weight: bold;
-      }
-
-      .mensaje {
-        margin-top: 15px;
+      button.principal:hover { background: #312450; }
+      .admin { margin-top: 18px; text-align: center; }
+      .admin a { text-decoration: none; color: #5e42a6; font-weight: bold; font-size: 14px; }
+      .msg {
+        margin-top: 14px;
         padding: 10px;
         border-radius: 8px;
         font-size: 14px;
         display: none;
         text-align: center;
       }
-
-      .mensaje.error {
-        background: #fde8e8;
-        color: red;
-      }
-
-      .mensaje.ok {
-        background: #e8fde8;
-        color: green;
-      }
+      .msg.error { background: #fde8e8; color: #c0392b; }
+      .msg.ok { background: #e8fde8; color: #27ae60; }
+      .panel { display: none; }
+      .panel.activo { display: block; }
     </style>
   </head>
-
   <body>
     <div class="contenedor">
       <div class="info">
         <h1>Conecta y Aprende</h1>
-        <p>
-          Da el primer paso para comenzar tu capacitacion en mecanica
-          automotriz.
-        </p>
+        <p>Da el primer paso para comenzar tu capacitación en mecánica automotriz y construir un futuro mejor.</p>
       </div>
       <div class="formulario">
-        <h2>Registro</h2>
-        <input type="text" id="nombre" placeholder="Nombre" />
-        <input type="number" id="edad" placeholder="Edad" min="1" />
-        <input type="password" id="clave" placeholder="Contraseña" />
-        <button onclick="registrar()">Ingresar</button>
+        <div class="tabs">
+          <div class="tab activo" onclick="cambiarTab('registro')">Nuevo usuario</div>
+          <div class="tab" onclick="cambiarTab('login')">Ya tengo cuenta</div>
+        </div>
 
-        <div id="mensaje" class="mensaje"></div>
+        <!-- Registro -->
+        <div id="panel-registro" class="panel activo">
+          <input type="text" id="reg-nombre" placeholder="Nombre de usuario" />
+          <input type="number" id="reg-edad" placeholder="Edad" min="1" max="99" />
+          <div class="campo-clave">
+            <input type="password" id="reg-clave" placeholder="Contraseña" />
+            <button class="ojo" type="button" onclick="toggleClave('reg-clave', this)" title="Mostrar/ocultar contraseña">Ver</button>
+          </div>
+          <button class="principal" onclick="registrar()">Registrarse</button>
+          <div id="msg-registro" class="msg"></div>
+        </div>
+
+        <!-- Login -->
+        <div id="panel-login" class="panel">
+          <input type="text" id="log-nombre" placeholder="Nombre de usuario" />
+          <div class="campo-clave">
+            <input type="password" id="log-clave" placeholder="Contraseña" />
+            <button class="ojo" type="button" onclick="toggleClave('log-clave', this)" title="Mostrar/ocultar contraseña">Ver</button>
+          </div>
+          <button class="principal" onclick="entrar()">Entrar</button>
+          <div id="msg-login" class="msg"></div>
+        </div>
 
         <div class="admin">
           <a href="admin.html">Ingresar como Administrador</a>
@@ -143,52 +159,93 @@
     </div>
 
     <script>
-      async function registrar() {
-        const nombre = document.getElementById("nombre").value.trim();
-        const edad = document.getElementById("edad").value.trim();
-        const clave = document.getElementById("clave").value.trim();
-        const msg = document.getElementById("mensaje");
+      function cambiarTab(tab) {
+        document.querySelectorAll(".tab").forEach((t, i) => {
+          t.classList.toggle("activo", (i === 0 && tab === "registro") || (i === 1 && tab === "login"));
+        });
+        document.getElementById("panel-registro").classList.toggle("activo", tab === "registro");
+        document.getElementById("panel-login").classList.toggle("activo", tab === "login");
+      }
 
-        msg.style.display = "none";
-
-        if (!nombre || !edad || !clave) {
-          msg.className = "mensaje error";
-          msg.innerText = "Completa todos los campos";
-          msg.style.display = "block";
-          return;
-        }
-
-        try {
-          const respuesta = await fetch("/registro", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ nombre, edad: parseInt(edad), clave }),
-          });
-
-          const datos = await respuesta.json();
-
-          if (datos.ok) {
-            msg.className = "mensaje ok";
-            msg.innerText = "Registro exitoso. Bienvenido!";
-            msg.style.display = "block";
-            setTimeout(() => {
-              window.location.href = "index.html";
-            }, 1200);
-          } else {
-            msg.className = "mensaje error";
-            msg.innerText = datos.mensaje || "Error al registrar";
-            msg.style.display = "block";
-          }
-        } catch (error) {
-          msg.className = "mensaje error";
-          msg.innerText = "No se pudo conectar con el servidor";
-          msg.style.display = "block";
-          console.error(error);
+      function toggleClave(inputId, btn) {
+        const inp = document.getElementById(inputId);
+        if (inp.type === "password") {
+          inp.type = "text";
+          btn.style.opacity = "1";
+          btn.style.color = "#5e42a6";
+        } else {
+          inp.type = "password";
+          btn.style.opacity = "0.6";
+          btn.style.color = "#888";
         }
       }
 
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") registrar();
+      function mostrarMsg(id, tipo, texto) {
+        const el = document.getElementById(id);
+        el.className = "msg " + tipo;
+        el.textContent = texto;
+        el.style.display = "block";
+      }
+
+      function guardarSesion(id, nombre) {
+        localStorage.setItem("usuario_conecta", JSON.stringify({ id, nombre }));
+        setTimeout(() => { window.location.href = "index.html"; }, 1000);
+      }
+
+      async function registrar() {
+        const nombre = document.getElementById("reg-nombre").value.trim();
+        const edad   = document.getElementById("reg-edad").value.trim();
+        const clave  = document.getElementById("reg-clave").value.trim();
+        if (!nombre || !edad || !clave) {
+          return mostrarMsg("msg-registro", "error", "Completa todos los campos");
+        }
+        try {
+          const r = await fetch("/registro", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre, edad: parseInt(edad), clave })
+          });
+          const d = await r.json();
+          if (d.ok) {
+            mostrarMsg("msg-registro", "ok", "¡Registro exitoso! Entrando...");
+            guardarSesion(d.id, d.nombre);
+          } else {
+            mostrarMsg("msg-registro", "error", d.mensaje || "Error al registrar");
+          }
+        } catch {
+          mostrarMsg("msg-registro", "error", "No se pudo conectar con el servidor");
+        }
+      }
+
+      async function entrar() {
+        const nombre = document.getElementById("log-nombre").value.trim();
+        const clave  = document.getElementById("log-clave").value.trim();
+        if (!nombre || !clave) {
+          return mostrarMsg("msg-login", "error", "Completa todos los campos");
+        }
+        try {
+          const r = await fetch("/usuario/login", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre, clave })
+          });
+          const d = await r.json();
+          if (d.ok) {
+            mostrarMsg("msg-login", "ok", "¡Bienvenido, " + d.nombre + "! Entrando...");
+            guardarSesion(d.id, d.nombre);
+          } else {
+            mostrarMsg("msg-login", "error", d.mensaje || "Datos incorrectos");
+          }
+        } catch {
+          mostrarMsg("msg-login", "error", "No se pudo conectar con el servidor");
+        }
+      }
+
+      document.addEventListener("keydown", e => {
+        if (e.key === "Enter") {
+          if (document.getElementById("panel-registro").classList.contains("activo")) registrar();
+          else entrar();
+        }
       });
     </script>
   </body>

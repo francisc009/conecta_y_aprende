@@ -6,17 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      .quiz-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+      .quiz-box p { font-weight: bold; margin-bottom: 12px; }
+      .quiz-box label { display: block; margin: 6px 0; cursor: pointer; padding: 6px 10px; border-radius: 6px; transition: background 0.2s; }
+      .quiz-box label:hover { background: rgba(255,255,255,0.1); }
+      .quiz-box label.correcta { background: rgba(80,200,80,0.25); }
+      .quiz-box label.incorrecta { background: rgba(200,80,80,0.25); }
+      #resultado-quiz { display:none; margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; }
+      #resultado-quiz h3 { font-size: 1.4em; margin-bottom: 8px; }
+      .btn-quiz { margin-top: 10px; padding: 12px 30px; background: #5e42a6; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+      .btn-quiz:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
   </head>
-
   <body class="is-preload">
     <header id="header">
       <a href="index.html" class="title">Módulo 1</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="modulo_1.html" class="active">Introducción</a></li>
-        </ul>
-      </nav>
+      <nav><ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="modulo_1.html" class="active">Introducción</a></li>
+      </ul></nav>
     </header>
 
     <div id="wrapper">
@@ -24,99 +33,22 @@
         <div class="inner">
           <h1 class="major">Introducción a la Mecánica Automotriz</h1>
 
-          <p>
-            La mecánica automotriz es una disciplina técnica enfocada en el
-            estudio, mantenimiento y reparación de vehículos. Esta área combina
-            conocimientos de sistemas mecánicos, eléctricos y electrónicos para
-            garantizar el correcto funcionamiento del automóvil.
-          </p>
+          <p>La mecánica automotriz es una disciplina técnica enfocada en el estudio, mantenimiento y reparación de vehículos. Esta área combina conocimientos de sistemas mecánicos, eléctricos y electrónicos para garantizar el correcto funcionamiento del automóvil.</p>
 
-          <p>
-            Actualmente la mecánica automotriz representa una de las áreas con
-            mayor evolución tecnológica debido al desarrollo de motores más
-            eficientes, sistemas computarizados y nuevas fuentes de energía. Por
-            ello, el aprendizaje de conceptos básicos es fundamental para
-            comprender procesos más avanzados.
-          </p>
+          <p>Actualmente representa una de las áreas con mayor evolución tecnológica debido al desarrollo de motores más eficientes, sistemas computarizados y nuevas fuentes de energía.</p>
 
           <hr />
-
           <h2>¿Qué estudia la mecánica automotriz?</h2>
-
-          <p>
-            La mecánica automotriz analiza cada uno de los sistemas que permiten
-            que un vehículo funcione correctamente. Entre ellos se encuentran el
-            sistema de propulsión, enfriamiento, frenado, dirección y sistema
-            eléctrico.
-          </p>
-
-          <p>
-            El mecánico automotriz no solo realiza reparaciones; también ejecuta
-            diagnósticos, inspecciones preventivas y mantenimiento para aumentar
-            la seguridad y vida útil del vehículo.
-          </p>
+          <p>Analiza cada uno de los sistemas que permiten que un vehículo funcione correctamente: sistema de propulsión, enfriamiento, frenado, dirección y eléctrico.</p>
+          <p>El mecánico automotriz no solo realiza reparaciones; también ejecuta diagnósticos, inspecciones preventivas y mantenimiento para aumentar la seguridad y vida útil del vehículo.</p>
 
           <hr />
-
           <h2>Importancia del mantenimiento</h2>
-
-          <p>
-            El mantenimiento automotriz consiste en revisar periódicamente las
-            condiciones del vehículo para prevenir fallas y conservar un
-            rendimiento adecuado.
-          </p>
-
-          <p>Existen dos tipos principales:</p>
-
-          <p>
-            <b>Mantenimiento preventivo:</b> se realiza antes de que ocurra una
-            falla mediante revisiones y cambios programados.
-          </p>
-
-          <p>
-            <b>Mantenimiento correctivo:</b> se realiza después de detectar una
-            avería para restaurar el funcionamiento del vehículo.
-          </p>
+          <p><b>Mantenimiento preventivo:</b> se realiza antes de que ocurra una falla mediante revisiones y cambios programados.</p>
+          <p><b>Mantenimiento correctivo:</b> se realiza después de detectar una avería para restaurar el funcionamiento del vehículo.</p>
 
           <hr />
-
-          <h2>Herramientas y su función</h2>
-
-          <p>
-            Las herramientas son elementos esenciales dentro del taller
-            automotriz. Cada una cumple funciones específicas que facilitan el
-            desmontaje, ajuste y revisión de componentes.
-          </p>
-
-          <p>
-            Entre las herramientas más utilizadas destacan las llaves
-            combinadas, dados, pinzas, desarmadores, multímetro y gato
-            hidráulico. El uso adecuado de estas herramientas permite trabajar
-            con mayor precisión y seguridad.
-          </p>
-
-          <hr />
-
-          <h2>Seguridad dentro del taller</h2>
-
-          <p>
-            El área de trabajo debe mantenerse limpia y organizada para evitar
-            accidentes. El uso del equipo de protección personal ayuda a reducir
-            riesgos durante la manipulación de piezas y herramientas.
-          </p>
-
-          <p>
-            Las medidas de seguridad incluyen utilizar lentes de protección,
-            guantes, evitar el contacto con piezas calientes y mantener
-            ventilación adecuada cuando el motor se encuentre encendido.
-          </p>
-
-          <hr />
-
           <h2>Principales componentes del automóvil</h2>
-
-          <p>Cada componente cumple una función indispensable para el funcionamiento del vehículo:</p>
-
           <p>
             <b>Motor:</b> transforma energía en movimiento.<br />
             <b>Batería:</b> alimenta los sistemas eléctricos.<br />
@@ -127,53 +59,25 @@
           </p>
 
           <hr />
-
-          <h2>Conclusiones</h2>
-
-          <p>
-            La mecánica automotriz constituye una base importante para
-            comprender el funcionamiento de los vehículos modernos. El
-            conocimiento de sus sistemas, herramientas y medidas de seguridad
-            permite desarrollar habilidades técnicas orientadas al mantenimiento
-            y diagnóstico automotriz.
-          </p>
+          <h2>Seguridad dentro del taller</h2>
+          <p>Las medidas de seguridad incluyen utilizar lentes de protección, guantes, evitar el contacto con piezas calientes y mantener ventilación adecuada cuando el motor se encuentre encendido.</p>
 
           <hr />
+          <h2 id="actividad">Actividad final — Quiz del Módulo 1</h2>
+          <p>Responde las 5 preguntas para completar el módulo. Necesitas al menos 3 correctas para aprobar.</p>
 
-          <h2>Actividad final</h2>
+          <div id="quiz-area"></div>
 
-          <p>Contesta el siguiente formulario para evaluar los conocimientos adquiridos durante este módulo.</p>
+          <button class="btn-quiz" id="btn-enviar" onclick="enviarQuiz()">Enviar respuestas</button>
 
-          <div style="text-align: center">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdSuHS4c5SkvTSM03njm_JQ5ffs-G1Sv3LOhEiQMUJCjVcuhw/viewform"
-              target="_blank"
-              class="button primary"
-            >
-              Ir al Formulario
-            </a>
-          </div>
-
-          <br />
-
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdSuHS4c5SkvTSM03njm_JQ5ffs-G1Sv3LOhEiQMUJCjVcuhw/viewform?embedded=true"
-            width="100%"
-            height="800"
-            frameborder="0"
-          >
-            Cargando formulario...
-          </iframe>
+          <div id="resultado-quiz"></div>
         </div>
       </section>
     </div>
 
     <footer id="footer" class="wrapper alt">
       <div class="inner">
-        <ul class="menu">
-          <li>Capacitación en Mecánica Automotriz</li>
-          <li>Módulo 1</li>
-        </ul>
+        <ul class="menu"><li>Capacitación en Mecánica Automotriz</li><li>Módulo 1</li></ul>
       </div>
     </footer>
 
@@ -184,5 +88,91 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      const MODULO = 1;
+      const PREGUNTAS = [
+        {
+          texto: "¿Qué componente del automóvil transforma energía en movimiento?",
+          opciones: ["La batería", "El radiador", "El motor", "Los frenos"],
+          correcta: 2
+        },
+        {
+          texto: "¿Qué tipo de mantenimiento se realiza ANTES de que ocurra una falla?",
+          opciones: ["Correctivo", "Urgente", "Preventivo", "Reparativo"],
+          correcta: 2
+        },
+        {
+          texto: "¿Qué componente regula la temperatura del motor?",
+          opciones: ["La batería", "La transmisión", "La suspensión", "El radiador"],
+          correcta: 3
+        },
+        {
+          texto: "¿Para qué sirve el equipo de protección personal en el taller?",
+          opciones: ["Trabajar más rápido", "Reducir riesgos de accidente", "Verse bien", "No es necesario"],
+          correcta: 1
+        },
+        {
+          texto: "¿Qué función cumple la suspensión del vehículo?",
+          opciones: ["Alimentar el sistema eléctrico", "Controlar la velocidad", "Mejorar estabilidad y absorber impactos", "Regular la temperatura"],
+          correcta: 2
+        }
+      ];
+
+      function renderQuiz() {
+        let html = "";
+        PREGUNTAS.forEach((p, i) => {
+          html += `<div class="quiz-box"><p>${i+1}. ${p.texto}</p>`;
+          p.opciones.forEach((op, j) => {
+            html += `<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
+          });
+          html += `</div>`;
+        });
+        document.getElementById("quiz-area").innerHTML = html;
+      }
+
+      function enviarQuiz() {
+        let correctas = 0, completo = true;
+        PREGUNTAS.forEach((p, i) => {
+          const sel = document.querySelector(`input[name="q${i}"]:checked`);
+          if (!sel) { completo = false; return; }
+          const etiquetas = document.querySelectorAll(`input[name="q${i}"]`);
+          etiquetas.forEach(r => r.disabled = true);
+          const selLabel = sel.parentElement;
+          const corrLabel = etiquetas[p.correcta].parentElement;
+          corrLabel.classList.add("correcta");
+          if (parseInt(sel.value) === p.correcta) { correctas++; }
+          else { selLabel.classList.add("incorrecta"); }
+        });
+
+        if (!completo) { alert("Por favor responde todas las preguntas."); return; }
+
+        document.getElementById("btn-enviar").disabled = true;
+        const puntaje = Math.round((correctas / PREGUNTAS.length) * 100);
+        const aprobado = correctas >= 3;
+        const res = document.getElementById("resultado-quiz");
+        res.style.display = "block";
+        res.style.background = aprobado ? "rgba(50,150,50,0.25)" : "rgba(150,50,50,0.25)";
+        res.style.border = `1px solid ${aprobado ? "rgba(80,200,80,0.4)" : "rgba(200,80,80,0.4)"}`;
+        res.innerHTML = `
+          <h3>${aprobado ? "¡Módulo completado!" : "Sigue estudiando"}</h3>
+          <p>Obtuviste <strong>${correctas} de ${PREGUNTAS.length}</strong> respuestas correctas (${puntaje}%)</p>
+          ${aprobado ? "<p>Regresando al inicio en 4 segundos...</p>" : "<p>Repasa el contenido y vuelve a intentarlo.</p>"}
+        `;
+
+        const usuario = JSON.parse(localStorage.getItem("usuario_conecta") || "null");
+        if (usuario) {
+          fetch("/progreso", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ usuario_id: usuario.id, modulo: MODULO, puntaje })
+          });
+        }
+
+        if (aprobado) setTimeout(() => { window.location.href = "index.html"; }, 4000);
+        res.scrollIntoView({ behavior: "smooth" });
+      }
+
+      renderQuiz();
+    </script>
   </body>
 </html>

@@ -8,16 +8,74 @@
   <head>
     <title>Conecta y Aprende</title>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, user-scalable=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript
-      ><link rel="stylesheet" href="assets/css/noscript.css"
-    /></noscript>
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      /* ── Barra de progreso en intro ─────────────────────── */
+      #bloque-progreso {
+        display: none;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.14);
+        border-radius: 14px;
+        padding: 20px 24px;
+        margin: 22px 0;
+      }
+      #bloque-progreso .saludo {
+        font-size: 1em;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .barra-track {
+        background: rgba(255,255,255,0.12);
+        border-radius: 50px;
+        height: 18px;
+        overflow: hidden;
+        margin-bottom: 8px;
+      }
+      .barra-inner {
+        height: 100%;
+        border-radius: 50px;
+        background: linear-gradient(90deg, #7b5ea7, #b09ad4);
+        transition: width 0.8s ease;
+        display: flex; align-items: center; justify-content: flex-end;
+        padding-right: 8px; font-size: 0.72em; font-weight: bold;
+      }
+      .modulos-pills {
+        display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px;
+      }
+      .pill {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.78em;
+        border: 1px solid rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.06);
+      }
+      .pill.ok {
+        background: rgba(80,200,120,0.18);
+        border-color: rgba(80,200,120,0.4);
+        color: #9effc8;
+      }
+      .btn-mi-cuenta {
+        font-size: 0.82em;
+        padding: 5px 14px;
+        border-radius: 20px;
+        background: rgba(123,94,167,0.3);
+        border: 1px solid rgba(123,94,167,0.5);
+        color: #d4c0f0;
+        cursor: pointer;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .btn-mi-cuenta:hover { background: rgba(123,94,167,0.5); }
+    </style>
   </head>
   <body class="is-preload">
+
     <!-- Sidebar -->
     <section id="sidebar">
       <div class="inner">
@@ -27,6 +85,8 @@
             <li><a href="#one">Módulos</a></li>
             <li><a href="#two">Impacto</a></li>
             <li><a href="#three">Contactanos</a></li>
+            <li><a href="mi_cuenta.html">Mi Cuenta</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)" style="color:#ff9a9a;">Cerrar sesión</a></li>
           </ul>
         </nav>
       </div>
@@ -34,23 +94,30 @@
 
     <!-- Wrapper -->
     <div id="wrapper">
+
       <!-- Intro -->
       <section id="intro" class="wrapper style1 fullscreen fade-up">
         <div class="inner">
           <div style="display: flex; align-items: center; gap: 20px">
-            <a
-              href="quienes_somos.html"
-              style="
-                display: flex;
-                align-items: center;
-                gap: 20px;
-                border: none;
-              "
-            >
+            <a href="quienes_somos.html" style="display:flex;align-items:center;gap:20px;border:none;">
               <img src="images/logo.png" alt="Logo" style="width: 300px" />
               <h1 style="margin: 0">Mecanico Automotriz</h1>
             </a>
           </div>
+
+          <!-- Bloque de progreso (visible si hay sesión) -->
+          <div id="bloque-progreso">
+            <div class="saludo">
+              <span id="saludo-txt">Cargando...</span>
+              <a href="mi_cuenta.html" class="btn-mi-cuenta">Mi cuenta</a>
+            </div>
+            <div class="barra-track">
+              <div class="barra-inner" id="barra-inner" style="width:0%"></div>
+            </div>
+            <div id="progreso-label" style="font-size:0.82em; opacity:0.7; margin-bottom:8px;"></div>
+            <div class="modulos-pills" id="modulos-pills"></div>
+          </div>
+
           <p>
             En VillaVictoria, Estado de México, comenzamos un viaje
             transformador hacia la recuperación y el crecimiento personal. Esta
@@ -67,9 +134,7 @@
           </p>
           <p>
             Toda informacion fue sacada de
-            <a href="https://capacitateparaelempleo.org/cursos/view/36"
-              >Capacitate para el empleo</a
-            >.
+            <a href="https://capacitateparaelempleo.org/cursos/view/36">Capacitate para el empleo</a>.
           </p>
           <ul class="actions">
             <li><a href="#one" class="button scrolly">Comencemos!!!</a></li>
@@ -80,64 +145,42 @@
       <!-- One -->
       <section id="one" class="wrapper style2 spotlights">
         <section>
-          <a href="#" class="image"
-            ><img src="images/pic01.jpg" alt="" data-position="center center"
-          /></a>
+          <a href="modulo_1.html" class="image"><img src="images/pic01.jpg" alt="Módulo 1" data-position="center center" /></a>
           <div class="content">
             <div class="inner">
-              <span class="image"
-                ><img
-                  src="images/logo.png"
-                  alt="Logo"
-                  style="width: 180px; margin-bottom: 1.5em"
-              /></span>
               <h2>Módulo 1</h2>
-              <p>Introduccion a la Mecanica Automotriz</p>
-              <ul class="actions">
-                <li><a href="modulo_1.html" class="button">Vamos</a></li>
-              </ul>
+              <p>Introducción a la Mecánica Automotriz</p>
+              <ul class="actions"><li><a href="modulo_1.html" class="button">Vamos</a></li></ul>
             </div>
           </div>
         </section>
         <section>
-          <a href="#" class="image"
-            ><img src="images/pic02.jpg" alt="" data-position="top center"
-          /></a>
+          <a href="modulo_2.html" class="image"><img src="images/pic02.jpg" alt="Módulo 2" data-position="top center" /></a>
           <div class="content">
             <div class="inner">
               <h2>Módulo 2</h2>
               <p>Mantenimiento Preventivo</p>
-              <ul class="actions">
-                <li><a href="modulo_2.html" class="button">Vamos</a></li>
-              </ul>
+              <ul class="actions"><li><a href="modulo_2.html" class="button">Vamos</a></li></ul>
             </div>
           </div>
         </section>
         <section>
-          <a href="#" class="image"
-            ><img src="images/pic03.jpg" alt="" data-position="25% 25%"
-          /></a>
+          <a href="modulo_3.html" class="image"><img src="images/pic03.jpg" alt="Módulo 3" data-position="center center" /></a>
           <div class="content">
             <div class="inner">
               <h2>Módulo 3</h2>
-              <p>Sistemas del Automovil</p>
-              <ul class="actions">
-                <li><a href="modulo_3.html" class="button">Vamos</a></li>
-              </ul>
+              <p>Sistemas del Automóvil</p>
+              <ul class="actions"><li><a href="modulo_3.html" class="button">Vamos</a></li></ul>
             </div>
           </div>
         </section>
         <section>
-          <a href="#" class="image"
-            ><img src="images/modulo4.jpg" alt="" data-position="25% 25%"
-          /></a>
+          <a href="modulo_4.html" class="image"><img src="images/modulo4.jpg" alt="Módulo 4" data-position="center center" /></a>
           <div class="content">
             <div class="inner">
               <h2>Módulo 4</h2>
-              <p>Diagnostico Basico</p>
-              <ul class="actions">
-                <li><a href="modulo_4.html" class="button">Vamos</a></li>
-              </ul>
+              <p>Diagnóstico Básico</p>
+              <ul class="actions"><li><a href="modulo_4.html" class="button">Vamos</a></li></ul>
             </div>
           </div>
         </section>
@@ -147,49 +190,31 @@
       <section id="two" class="wrapper style3 fade-up">
         <div class="inner">
           <h2>Como Impacta Este Programa</h2>
-
           <p>
             La capacitacion en mecanica automotriz transforma el aprendizaje en
             una experiencia practica que impulsa habilidades tecnicas,
             organizacion, disciplina y preparacion para nuevas oportunidades.
           </p>
-
           <div class="features">
             <section>
               <span class="icon solid major fa-wrench"></span>
               <h3>Aprender Haciendo</h3>
-              <p>
-                El trabajo practico permite desarrollar conocimientos reales
-                mediante mantenimiento, diagnostico y funcionamiento del
-                automovil.
-              </p>
+              <p>El trabajo practico permite desarrollar conocimientos reales mediante mantenimiento, diagnostico y funcionamiento del automovil.</p>
             </section>
-
             <section>
               <span class="icon solid major fa-calendar-check"></span>
               <h3>Rutinas y Disciplina</h3>
-              <p>
-                Participar en actividades organizadas fortalece compromiso,
-                constancia y administracion del tiempo.
-              </p>
+              <p>Participar en actividades organizadas fortalece compromiso, constancia y administracion del tiempo.</p>
             </section>
-
             <section>
               <span class="icon solid major fa-users"></span>
               <h3>Trabajo en Equipo</h3>
-              <p>
-                Las actividades del taller promueven colaboracion, comunicacion
-                y solucion conjunta de tareas.
-              </p>
+              <p>Las actividades del taller promueven colaboracion, comunicacion y solucion conjunta de tareas.</p>
             </section>
-
             <section>
               <span class="icon solid major fa-brain"></span>
               <h3>Desarrollo de Habilidades</h3>
-              <p>
-                Se fortalecen observacion, analisis, toma de decisiones y
-                capacidad para resolver problemas.
-              </p>
+              <p>Se fortalecen observacion, analisis, toma de decisiones y capacidad para resolver problemas.</p>
             </section>
           </div>
         </div>
@@ -199,51 +224,23 @@
       <section id="three" class="wrapper style1 fade-up">
         <div class="inner">
           <h2>Contactanos</h2>
-
           <p>¿Tienes dudas? Escríbenos.</p>
-
           <div class="split style1">
             <section>
               <form>
                 <div class="fields">
-                  <div class="field half">
-                    <label>Nombre</label>
-                    <input type="text" />
-                  </div>
-
-                  <div class="field half">
-                    <label>Correo</label>
-                    <input type="email" />
-                  </div>
-
-                  <div class="field">
-                    <label>Mensaje</label>
-                    <textarea rows="6"></textarea>
-                  </div>
+                  <div class="field half"><label>Nombre</label><input type="text" /></div>
+                  <div class="field half"><label>Correo</label><input type="email" /></div>
+                  <div class="field"><label>Mensaje</label><textarea rows="6"></textarea></div>
                 </div>
-
-                <ul class="actions">
-                  <li><a href="#" class="button submit">Enviar</a></li>
-                </ul>
+                <ul class="actions"><li><a href="#" class="button submit">Enviar</a></li></ul>
               </form>
             </section>
-
             <section>
               <ul class="contact">
-                <li>
-                  <h3>Direccion</h3>
-                  <span>Villa Victoria, Estado de Mexico</span>
-                </li>
-
-                <li>
-                  <h3>Email</h3>
-                  <span>conectayaprende@gmail.com</span>
-                </li>
-
-                <li>
-                  <h3>Telefono</h3>
-                  <span>(000) 000-0000</span>
-                </li>
+                <li><h3>Direccion</h3><span>Villa Victoria, Estado de Mexico</span></li>
+                <li><h3>Email</h3><span>conectayaprende@gmail.com</span></li>
+                <li><h3>Telefono</h3><span>(000) 000-0000</span></li>
               </ul>
             </section>
           </div>
@@ -253,33 +250,14 @@
       <section id="rating" class="wrapper style2 fade-up">
         <div class="inner">
           <h2>Calificanos</h2>
-
           <p>Tu opinion nos ayuda a mejorar.</p>
-
           <form>
             <div class="fields">
-              <div class="field">
-                <label>Nombre</label>
-                <input type="text" />
-              </div>
-
-              <div class="field">
-                <label>Calificacion</label>
-
-                <div style="font-size: 38px">⭐ ⭐ ⭐ ⭐ ⭐</div>
-              </div>
-
-              <div class="field">
-                <label>Comentario</label>
-                <textarea rows="5"></textarea>
-              </div>
+              <div class="field"><label>Nombre</label><input type="text" /></div>
+              <div class="field"><label>Calificacion</label><div style="font-size: 22px; letter-spacing: 4px; color: #f0c040;">&#9733; &#9733; &#9733; &#9733; &#9733;</div></div>
+              <div class="field"><label>Comentario</label><textarea rows="5"></textarea></div>
             </div>
-
-            <ul class="actions">
-              <li>
-                <a href="#" class="button submit"> Enviar Opinion </a>
-              </li>
-            </ul>
+            <ul class="actions"><li><a href="#" class="button submit">Enviar Opinion</a></li></ul>
           </form>
         </div>
       </section>
@@ -289,13 +267,12 @@
     <footer id="footer" class="wrapper style1-alt">
       <div class="inner">
         <ul class="menu">
-          <li>&copy; Untitled. All rights reserved.</li>
+          <li>&copy; Conecta y Aprende. All rights reserved.</li>
           <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
         </ul>
       </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.scrollex.min.js"></script>
     <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -303,5 +280,48 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <script>
+      function cerrarSesion(e) {
+        if (e) e.preventDefault();
+        localStorage.removeItem("usuario_conecta");
+        window.location.href = "inicio.html";
+      }
+
+      (function cargarProgreso() {
+        const usuario = JSON.parse(localStorage.getItem("usuario_conecta") || "null");
+        if (!usuario) return;
+
+        document.getElementById("bloque-progreso").style.display = "block";
+        document.getElementById("saludo-txt").textContent = "¡Hola, " + usuario.nombre + "! Tu avance:";
+
+        fetch("/progreso/" + usuario.id)
+          .then(r => r.json())
+          .then(data => {
+            const completados = data.length;
+            const pct = Math.round((completados / 4) * 100);
+
+            const barra = document.getElementById("barra-inner");
+            barra.style.width = pct + "%";
+            barra.textContent = pct > 12 ? pct + "%" : "";
+
+            document.getElementById("progreso-label").textContent =
+              completados === 4
+                ? "¡Completaste todos los módulos!"
+                : completados + " de 4 módulos completados";
+
+            const nombres = ["Módulo 1","Módulo 2","Módulo 3","Módulo 4"];
+            const completadosNums = data.map(d => d.modulo);
+            document.getElementById("modulos-pills").innerHTML = nombres.map((n, i) => {
+              const ok = completadosNums.includes(i + 1);
+              const p  = data.find(d => d.modulo === i + 1);
+              return `<span class="pill ${ok ? "ok" : ""}">
+                ${ok ? "Completado" : "Pendiente"} - ${n}${ok && p ? " (" + p.puntaje + "%)" : ""}
+              </span>`;
+            }).join("");
+          })
+          .catch(() => {});
+      })();
+    </script>
   </body>
 </html>

@@ -6,17 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+      .quiz-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 20px; margin-bottom: 16px; }
+      .quiz-box p { font-weight: bold; margin-bottom: 12px; }
+      .quiz-box label { display: block; margin: 6px 0; cursor: pointer; padding: 6px 10px; border-radius: 6px; transition: background 0.2s; }
+      .quiz-box label:hover { background: rgba(255,255,255,0.1); }
+      .quiz-box label.correcta { background: rgba(80,200,80,0.25); }
+      .quiz-box label.incorrecta { background: rgba(200,80,80,0.25); }
+      #resultado-quiz { display:none; margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; }
+      #resultado-quiz h3 { font-size: 1.4em; margin-bottom: 8px; }
+      .btn-quiz { margin-top: 10px; padding: 12px 30px; background: #5e42a6; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+      .btn-quiz:disabled { opacity: 0.5; cursor: not-allowed; }
+    </style>
   </head>
-
   <body class="is-preload">
     <header id="header">
       <a href="index.html" class="title">Módulo 3</a>
-      <nav>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="modulo_3.html" class="active">Sistemas</a></li>
-        </ul>
-      </nav>
+      <nav><ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="modulo_3.html" class="active">Sistemas</a></li>
+      </ul></nav>
     </header>
 
     <div id="wrapper">
@@ -25,167 +34,46 @@
           <h1 class="major">Sistemas del Automóvil</h1>
 
           <h2>Protección civil</h2>
-
-          <iframe
-            src="pdfs/protecion.pdf"
-            width="100%"
-            height="700"
-            style="border: none"
-          >
-          </iframe>
+          <iframe src="pdfs/protecion.pdf" width="100%" height="600" style="border:none; border-radius: 8px;"></iframe>
 
           <br /><br />
 
-          <p>
-            Un automóvil funciona mediante distintos sistemas que trabajan
-            juntos para generar movimiento, mantener estabilidad, proporcionar
-            energía y ofrecer seguridad. Comprender cada uno permite identificar
-            fallas, realizar mantenimiento y conocer mejor el funcionamiento
-            general del vehículo.
-          </p>
+          <p>Un automóvil funciona mediante distintos sistemas que trabajan juntos para generar movimiento, mantener estabilidad, proporcionar energía y ofrecer seguridad.</p>
 
           <hr />
-
-          <h2>Importancia de los sistemas automotrices</h2>
-
-          <p>
-            Cada sistema cumple una función específica dentro del vehículo. Si
-            uno presenta desgaste o falla, el rendimiento general puede
-            disminuir. El conocimiento de estos componentes ayuda a desarrollar
-            habilidades de observación, análisis técnico y solución de
-            problemas.
-          </p>
-
-          <hr />
-
           <h2>Motor</h2>
-
-          <p>
-            El motor es el sistema principal del automóvil porque transforma
-            energía en movimiento. Su funcionamiento depende del trabajo
-            coordinado entre distintas piezas que permiten generar potencia para
-            desplazar el vehículo.
-          </p>
-
-          <p>
-            Durante el proceso se realiza admisión, compresión, combustión y
-            escape. Estas etapas permiten aprovechar la energía y mantener el
-            rendimiento del automóvil.
-          </p>
-
-          <p>
-            El mantenimiento del motor incluye revisión de aceite, limpieza y
-            control de temperatura para reducir desgaste.
-          </p>
+          <p>El motor es el sistema principal del automóvil porque transforma energía en movimiento. Durante el proceso se realiza <b>admisión, compresión, combustión y escape</b>. El mantenimiento del motor incluye revisión de aceite, limpieza y control de temperatura para reducir desgaste.</p>
 
           <hr />
-
           <h2>Sistema de frenos</h2>
-
-          <p>
-            Los frenos permiten controlar velocidad y detener el automóvil
-            cuando es necesario. Son uno de los sistemas más importantes para la
-            seguridad.
-          </p>
-
-          <p>
-            Su funcionamiento depende del contacto entre componentes que generan
-            fricción para disminuir movimiento. Las revisiones frecuentes ayudan
-            a detectar desgaste y mantener seguridad durante la conducción.
-          </p>
+          <p>Los frenos permiten controlar velocidad y detener el automóvil cuando es necesario. Su funcionamiento depende del contacto entre componentes que generan fricción para disminuir movimiento.</p>
 
           <hr />
-
           <h2>Suspensión</h2>
-
-          <p>
-            La suspensión absorbe impactos y mantiene estabilidad durante el
-            recorrido. También mejora comodidad y ayuda a conservar contacto
-            entre las llantas y el camino.
-          </p>
-
-          <p>
-            Cuando este sistema se encuentra en buen estado disminuyen
-            vibraciones y mejora el control del vehículo.
-          </p>
+          <p>La suspensión absorbe impactos y mantiene estabilidad durante el recorrido. También mejora comodidad y ayuda a conservar contacto entre las llantas y el camino.</p>
 
           <hr />
-
           <h2>Sistema eléctrico</h2>
-
-          <p>
-            El sistema eléctrico suministra energía a distintos componentes del
-            automóvil. Elementos como batería, alternador y cableado trabajan
-            para mantener operativos sistemas de encendido, iluminación y
-            control.
-          </p>
-
-          <p>
-            Actualmente los vehículos incorporan más tecnología y por eso este
-            sistema tiene mayor importancia.
-          </p>
+          <p>El sistema eléctrico suministra energía a distintos componentes del automóvil. Elementos como <b>batería, alternador y cableado</b> trabajan para mantener operativos sistemas de encendido, iluminación y control.</p>
 
           <hr />
-
           <h2>Relación entre sistemas</h2>
-
-          <p>
-            Todos los sistemas trabajan de forma conjunta. El motor genera
-            movimiento, el sistema eléctrico distribuye energía, la suspensión
-            mantiene estabilidad y los frenos controlan desplazamiento.
-          </p>
-
-          <p>
-            Comprender esta relación facilita el diagnóstico y mejora el
-            mantenimiento del automóvil.
-          </p>
+          <p>Todos los sistemas trabajan de forma conjunta. El motor genera movimiento, el sistema eléctrico distribuye energía, la suspensión mantiene estabilidad y los frenos controlan desplazamiento. Comprender esta relación facilita el diagnóstico y mejora el mantenimiento.</p>
 
           <hr />
+          <h2 id="actividad">Actividad final — Quiz del Módulo 3</h2>
+          <p>Responde las 5 preguntas para completar el módulo. Necesitas al menos 3 correctas para aprobar.</p>
 
-          <h2>Resultado esperado</h2>
-
-          <p>
-            Al finalizar este módulo se comprenderá el funcionamiento de los
-            principales sistemas del automóvil y la relación entre ellos para
-            lograr un funcionamiento seguro y eficiente.
-          </p>
-
-          <hr />
-
-          <h2>Actividad final</h2>
-
-          <p>Responde el siguiente formulario.</p>
-
-          <div style="text-align: center">
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdnpTpXgOusKn_SQoWim0FiUgWl06UTe9uRnjSB76DzXz0nQw/viewform"
-              target="_blank"
-              class="button primary"
-            >
-              Abrir formulario
-            </a>
-          </div>
-
-          <br />
-
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSdnpTpXgOusKn_SQoWim0FiUgWl06UTe9uRnjSB76DzXz0nQw/viewform?embedded=true"
-            width="100%"
-            height="1200"
-            frameborder="0"
-          >
-            Cargando formulario...
-          </iframe>
+          <div id="quiz-area"></div>
+          <button class="btn-quiz" id="btn-enviar" onclick="enviarQuiz()">Enviar respuestas</button>
+          <div id="resultado-quiz"></div>
         </div>
       </section>
     </div>
 
     <footer id="footer" class="wrapper alt">
       <div class="inner">
-        <ul class="menu">
-          <li>Capacitación en Mecánica Automotriz</li>
-          <li>Módulo 3</li>
-        </ul>
+        <ul class="menu"><li>Capacitación en Mecánica Automotriz</li><li>Módulo 3</li></ul>
       </div>
     </footer>
 
@@ -196,5 +84,91 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+      const MODULO = 3;
+      const PREGUNTAS = [
+        {
+          texto: "¿Cuál es el sistema principal del automóvil?",
+          opciones: ["El sistema de frenos", "La suspensión", "El motor", "El sistema eléctrico"],
+          correcta: 2
+        },
+        {
+          texto: "¿Qué etapas realiza el motor durante su funcionamiento?",
+          opciones: ["Arranque, parada y marcha", "Admisión, compresión, combustión y escape", "Entrada, proceso y salida", "Encendido y apagado"],
+          correcta: 1
+        },
+        {
+          texto: "¿Qué función cumple la suspensión?",
+          opciones: ["Controlar la velocidad", "Suministrar energía eléctrica", "Absorber impactos y mantener estabilidad", "Regular la temperatura del motor"],
+          correcta: 2
+        },
+        {
+          texto: "¿Qué elementos forman el sistema eléctrico del automóvil?",
+          opciones: ["Motor, frenos y llantas", "Batería, alternador y cableado", "Aceite, filtros y radiador", "Suspensión, dirección y frenos"],
+          correcta: 1
+        },
+        {
+          texto: "¿Por qué es importante conocer la relación entre los sistemas del automóvil?",
+          opciones: ["Para cambiar el color del auto", "Para conducir más rápido", "Facilita el diagnóstico y mejora el mantenimiento", "No tiene importancia práctica"],
+          correcta: 2
+        }
+      ];
+
+      function renderQuiz() {
+        let html = "";
+        PREGUNTAS.forEach((p, i) => {
+          html += `<div class="quiz-box"><p>${i+1}. ${p.texto}</p>`;
+          p.opciones.forEach((op, j) => {
+            html += `<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
+          });
+          html += `</div>`;
+        });
+        document.getElementById("quiz-area").innerHTML = html;
+      }
+
+      function enviarQuiz() {
+        let correctas = 0, completo = true;
+        PREGUNTAS.forEach((p, i) => {
+          const sel = document.querySelector(`input[name="q${i}"]:checked`);
+          if (!sel) { completo = false; return; }
+          const etiquetas = document.querySelectorAll(`input[name="q${i}"]`);
+          etiquetas.forEach(r => r.disabled = true);
+          const selLabel = sel.parentElement;
+          const corrLabel = etiquetas[p.correcta].parentElement;
+          corrLabel.classList.add("correcta");
+          if (parseInt(sel.value) === p.correcta) correctas++;
+          else selLabel.classList.add("incorrecta");
+        });
+
+        if (!completo) { alert("Por favor responde todas las preguntas."); return; }
+
+        document.getElementById("btn-enviar").disabled = true;
+        const puntaje = Math.round((correctas / PREGUNTAS.length) * 100);
+        const aprobado = correctas >= 3;
+        const res = document.getElementById("resultado-quiz");
+        res.style.display = "block";
+        res.style.background = aprobado ? "rgba(50,150,50,0.25)" : "rgba(150,50,50,0.25)";
+        res.style.border = `1px solid ${aprobado ? "rgba(80,200,80,0.4)" : "rgba(200,80,80,0.4)"}`;
+        res.innerHTML = `
+          <h3>${aprobado ? "¡Módulo completado!" : "Sigue estudiando"}</h3>
+          <p>Obtuviste <strong>${correctas} de ${PREGUNTAS.length}</strong> respuestas correctas (${puntaje}%)</p>
+          ${aprobado ? "<p>Regresando al inicio en 4 segundos...</p>" : "<p>Repasa el contenido y vuelve a intentarlo.</p>"}
+        `;
+
+        const usuario = JSON.parse(localStorage.getItem("usuario_conecta") || "null");
+        if (usuario) {
+          fetch("/progreso", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ usuario_id: usuario.id, modulo: MODULO, puntaje })
+          });
+        }
+
+        if (aprobado) setTimeout(() => { window.location.href = "index.html"; }, 4000);
+        res.scrollIntoView({ behavior: "smooth" });
+      }
+
+      renderQuiz();
+    </script>
   </body>
 </html>
