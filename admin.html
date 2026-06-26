@@ -135,17 +135,12 @@
         }
 
         try {
-          let respuesta = await fetch("http://127.0.0.1:3000/admin", {
+          let respuesta = await fetch("/admin/login", {
             method: "POST",
-
             headers: {
               "Content-Type": "application/json",
             },
-
-            body: JSON.stringify({
-              usuario,
-              clave,
-            }),
+            body: JSON.stringify({ usuario, clave }),
           });
 
           let datos = await respuesta.json();

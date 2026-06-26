@@ -66,6 +66,8 @@
         border: none;
         background: #f2f2f2;
         border-radius: 10px;
+        font-size: 15px;
+        outline: none;
       }
 
       button {
@@ -77,6 +79,7 @@
         color: white;
         font-size: 16px;
         cursor: pointer;
+        transition: 0.3s;
       }
 
       button:hover {
@@ -93,6 +96,25 @@
         color: #5e42a6;
         font-weight: bold;
       }
+
+      .mensaje {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 8px;
+        font-size: 14px;
+        display: none;
+        text-align: center;
+      }
+
+      .mensaje.error {
+        background: #fde8e8;
+        color: red;
+      }
+
+      .mensaje.ok {
+        background: #e8fde8;
+        color: green;
+      }
     </style>
   </head>
 
@@ -107,15 +129,65 @@
       </div>
       <div class="formulario">
         <h2>Registro</h2>
-        <form action="index.html">
-          <input type="text" placeholder="Nombre" required />
-          <input type="number" placeholder="Edad" required />
-          <button type="submit">Ingresar</button>
-        </form>
+        <input type="text" id="nombre" placeholder="Nombre" />
+        <input type="number" id="edad" placeholder="Edad" min="1" />
+        <button onclick="registrar()">Ingresar</button>
+
+        <div id="mensaje" class="mensaje"></div>
+
         <div class="admin">
           <a href="admin.html">Ingresar como Administrador</a>
         </div>
       </div>
     </div>
+
+    <script>
+      async function registrar() {
+        const nombre = document.getElementById("nombre").value.trim();
+        const edad = document.getElementById("edad").value.trim();
+        const msg = document.getElementById("mensaje");
+
+        msg.style.display = "none";
+
+        if (!nombre || !edad) {
+          msg.className = "mensaje error";
+          msg.innerText = "Completa todos los campos";
+          msg.style.display = "block";
+          return;
+        }
+
+        try {
+          const respuesta = await fetch("/registro", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nombre, edad: parseInt(edad) }),
+          });
+
+          const datos = await respuesta.json();
+
+          if (datos.ok) {
+            msg.className = "mensaje ok";
+            msg.innerText = "Registro exitoso. Bienvenido!";
+            msg.style.display = "block";
+            setTimeout(() => {
+              window.location.href = "index.html";
+            }, 1200);
+          } else {
+            msg.className = "mensaje error";
+            msg.innerText = datos.mensaje || "Error al registrar";
+            msg.style.display = "block";
+          }
+        } catch (error) {
+          msg.className = "mensaje error";
+          msg.innerText = "No se pudo conectar con el servidor";
+          msg.style.display = "block";
+          console.error(error);
+        }
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") registrar();
+      });
+    </script>
   </body>
 </html>
