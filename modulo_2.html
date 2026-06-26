@@ -13,10 +13,18 @@
       .quiz-box label:hover { background: rgba(255,255,255,0.1); }
       .quiz-box label.correcta { background: rgba(80,200,80,0.25); }
       .quiz-box label.incorrecta { background: rgba(200,80,80,0.25); }
+      .tipo-badge { display: inline-block; font-size: 0.7em; font-weight: normal; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
       #resultado-quiz { display:none; margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; }
       #resultado-quiz h3 { font-size: 1.4em; margin-bottom: 8px; }
       .btn-quiz { margin-top: 10px; padding: 12px 30px; background: #5e42a6; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
       .btn-quiz:disabled { opacity: 0.5; cursor: not-allowed; }
+      .info-box { background: rgba(94,66,166,0.15); border-left: 4px solid #5e42a6; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+      .pasos-lista { counter-reset: pasos; list-style: none; padding: 0; }
+      .pasos-lista li { counter-increment: pasos; padding: 10px 10px 10px 44px; position: relative; margin-bottom: 8px; background: rgba(255,255,255,0.04); border-radius: 6px; }
+      .pasos-lista li::before { content: counter(pasos); position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: #5e42a6; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8em; font-weight: bold; }
+      table.tabla-mod { width:100%; border-collapse: collapse; margin: 14px 0; }
+      table.tabla-mod th { background: rgba(255,255,255,0.1); padding: 10px; text-align: left; }
+      table.tabla-mod td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
     </style>
   </head>
   <body class="is-preload">
@@ -33,32 +41,101 @@
         <div class="inner">
           <h1 class="major">Mantenimiento Preventivo</h1>
 
-          <p>El mantenimiento preventivo consiste en revisar y cuidar el automóvil de forma periódica para mantenerlo en buen estado. Estas actividades ayudan a detectar pequeños problemas antes de que se conviertan en fallas mayores.</p>
+          <p>El mantenimiento preventivo consiste en revisar y cuidar el automóvil de forma periódica para mantenerlo en buen estado. Estas actividades ayudan a detectar pequeños problemas antes de que se conviertan en fallas mayores que resultan mucho más costosas.</p>
+
+          <div class="info-box">
+            <strong>Dato clave:</strong> Se estima que por cada peso invertido en mantenimiento preventivo, se evitan hasta cinco pesos en reparaciones correctivas. Mantener el vehículo en buen estado también reduce el consumo de combustible.
+          </div>
 
           <hr />
-          <h2>¿Por qué es importante?</h2>
-          <p>Cuando un vehículo recibe mantenimiento de forma constante, sus componentes duran más tiempo y trabajan mejor. Esto ayuda a reducir gastos inesperados y permite detectar señales de desgaste antes de que aparezcan problemas mayores.</p>
+          <h2>¿Por qué es importante el mantenimiento preventivo?</h2>
+          <p>Cuando un vehículo recibe mantenimiento de forma constante, sus componentes duran más tiempo y trabajan mejor. Esto ayuda a:</p>
+          <ul>
+            <li>Reducir gastos inesperados por reparaciones de emergencia.</li>
+            <li>Aumentar la seguridad del conductor y sus pasajeros.</li>
+            <li>Conservar el valor del vehículo con el paso del tiempo.</li>
+            <li>Detectar señales de desgaste antes de que aparezcan problemas mayores.</li>
+            <li>Reducir el consumo de combustible y las emisiones contaminantes.</li>
+          </ul>
 
           <hr />
-          <h2>Revisión del aceite</h2>
-          <p>El aceite es uno de los elementos más importantes del motor. Su función es ayudar a que las piezas internas trabajen con menos fricción. Cuando el aceite está en mal estado, el motor puede calentarse más de lo normal y perder rendimiento.</p>
+          <h2>Revisión del aceite del motor</h2>
+          <p>El aceite es uno de los elementos más importantes del motor. Su función es lubricar las piezas internas para que trabajen con menos fricción. Cuando el aceite está en mal estado, el motor puede calentarse más de lo normal, aumentar el desgaste y perder rendimiento.</p>
+
+          <h3>Pasos para revisar el aceite</h3>
+          <ol class="pasos-lista">
+            <li>Apagar el motor y esperar al menos 5 minutos para que el aceite baje al cárter.</li>
+            <li>Localizar la varilla medidora (dipstick) y extraerla con cuidado.</li>
+            <li>Limpiar la varilla con un trapo limpio y volverla a insertar completamente.</li>
+            <li>Sacar la varilla de nuevo y observar el nivel entre las marcas MIN y MAX.</li>
+            <li>Revisar también el color del aceite: debe ser ámbar dorado, no negro ni con espuma.</li>
+          </ol>
+
+          <div class="info-box">
+            El aceite negro indica que está muy sucio y necesita cambio. Si tiene apariencia lechosa, puede haber mezcla con refrigerante, lo que indica un problema mayor.
+          </div>
 
           <hr />
-          <h2>Revisión de líquidos</h2>
-          <p>El vehículo utiliza distintos líquidos para funcionar correctamente:</p>
-          <p>Aceite del motor · Líquido refrigerante · Líquido de frenos · Líquido limpiaparabrisas</p>
+          <h2>Cambio de aceite</h2>
+          <p>El cambio de aceite es una de las tareas de mantenimiento más frecuentes. En general se recomienda cada 5,000 km con aceite mineral, o cada 10,000 km con aceite sintético, aunque esto puede variar según el fabricante del vehículo.</p>
+          <p>Durante el cambio de aceite también se reemplaza el <strong>filtro de aceite</strong>, que retiene partículas de suciedad y metales del desgaste interno del motor.</p>
+
+          <hr />
+          <h2>Revisión de líquidos del vehículo</h2>
+          <table class="tabla-mod">
+            <tr><th>Líquido</th><th>Función</th><th>Frecuencia de revisión</th></tr>
+            <tr><td><strong>Aceite del motor</strong></td><td>Lubrica piezas internas</td><td>Cada 1,000 km o mensual</td></tr>
+            <tr><td><strong>Líquido refrigerante</strong></td><td>Regula la temperatura del motor</td><td>Cada 6 meses</td></tr>
+            <tr><td><strong>Líquido de frenos</strong></td><td>Transmite la fuerza de frenado</td><td>Cada 6 meses o al año</td></tr>
+            <tr><td><strong>Líquido de dirección</strong></td><td>Facilita el giro del volante</td><td>Anual o según fabricante</td></tr>
+            <tr><td><strong>Limpiaparabrisas</strong></td><td>Limpia el parabrisas</td><td>Cuando sea necesario</td></tr>
+          </table>
 
           <hr />
           <h2>Filtros del automóvil</h2>
-          <p>Los filtros ayudan a mantener limpios distintos sistemas del vehículo. Existen filtros que protegen el motor, mejoran la entrada de aire y ayudan al sistema de combustible. Cuando los filtros están sucios el rendimiento puede disminuir.</p>
+          <p>Los filtros son componentes que retienen impurezas para proteger los sistemas del vehículo:</p>
+          <ul>
+            <li><strong>Filtro de aceite:</strong> captura partículas metálicas y suciedad del aceite del motor.</li>
+            <li><strong>Filtro de aire:</strong> evita que polvo y partículas entren al motor con el aire de combustión.</li>
+            <li><strong>Filtro de combustible:</strong> elimina impurezas de la gasolina antes de llegar al motor.</li>
+            <li><strong>Filtro de cabina:</strong> purifica el aire que entra al habitáculo del vehículo.</li>
+          </ul>
+          <p>Cuando los filtros están sucios o saturados, el rendimiento del motor disminuye y el consumo de combustible aumenta.</p>
 
           <hr />
-          <h2>Inspección visual</h2>
-          <p>Parte del mantenimiento consiste en observar el estado general del automóvil: estado de llantas, luces funcionando, mangueras sin daños, ausencia de fugas y limpieza general.</p>
+          <h2>Revisión de batería</h2>
+          <p>La batería almacena energía eléctrica para arrancar el motor y alimentar los sistemas del vehículo. Una batería en mal estado puede dejar al vehículo sin arranque de forma inesperada.</p>
+          <p>Señales de una batería en mal estado:</p>
+          <ul>
+            <li>El motor tarda más de lo normal en arrancar.</li>
+            <li>Las luces del tablero parpadean al encender.</li>
+            <li>Se observa corrosión blanca o azulada en los terminales.</li>
+            <li>La batería tiene más de 3 años de uso.</li>
+          </ul>
+
+          <hr />
+          <h2>Presión de llantas</h2>
+          <p>Mantener la presión correcta en las llantas es esencial para la seguridad y el rendimiento. Una llanta desinflada aumenta el consumo de combustible, genera mayor desgaste irregular y puede causar accidentes.</p>
+          <p>La presión recomendada generalmente se encuentra en una etiqueta ubicada en el marco de la puerta del conductor o en el manual del vehículo. Se mide en <strong>PSI (libras por pulgada cuadrada)</strong> o en <strong>kPa</strong>.</p>
+
+          <hr />
+          <h2>Inspección visual del automóvil</h2>
+          <p>Parte del mantenimiento consiste en observar el estado general del automóvil de forma regular:</p>
+          <ul>
+            <li><strong>Llantas:</strong> revisar desgaste y presión.</li>
+            <li><strong>Luces:</strong> verificar que todas funcionen (freno, reversa, intermitentes, largas).</li>
+            <li><strong>Mangueras y cintas:</strong> buscar grietas, fugas o deformaciones.</li>
+            <li><strong>Carrocería:</strong> detectar golpes, oxido o daños que puedan avanzar.</li>
+            <li><strong>Fugas:</strong> revisar el piso donde se estaciona el vehículo buscando manchas de líquidos.</li>
+          </ul>
+
+          <div class="info-box">
+            <strong>Consejo profesional:</strong> Realizar una inspección visual completa cada semana solo toma de 5 a 10 minutos y puede evitar fallas graves que detengan el vehículo en el camino.
+          </div>
 
           <hr />
           <h2 id="actividad">Actividad final — Quiz del Módulo 2</h2>
-          <p>Responde las 5 preguntas para completar el módulo. Necesitas al menos 3 correctas para aprobar.</p>
+          <p>Responde las <strong>10 preguntas</strong> para completar el módulo. Necesitas al menos <strong>6 correctas</strong> para aprobar. Las preguntas incluyen opción múltiple y Verdadero/Falso.</p>
 
           <div id="quiz-area"></div>
           <button class="btn-quiz" id="btn-enviar" onclick="enviarQuiz()">Enviar respuestas</button>
@@ -82,38 +159,74 @@
     <script src="assets/js/main.js"></script>
     <script>
       const MODULO = 2;
+      const MINIMO_PARA_APROBAR = 6;
       const PREGUNTAS = [
         {
+          tipo: "Opción múltiple",
           texto: "¿Cuál es el principal objetivo del mantenimiento preventivo?",
-          opciones: ["Arreglar fallas después de que ocurren", "Detectar y evitar fallas antes de que ocurran", "Lavar el automóvil", "Aumentar la velocidad del motor"],
+          opciones: ["Arreglar fallas después de que ocurren", "Detectar y evitar fallas antes de que ocurran", "Lavar el automóvil periódicamente", "Aumentar la velocidad del motor"],
           correcta: 1
         },
         {
+          tipo: "Opción múltiple",
           texto: "¿Para qué sirve el aceite del motor?",
-          opciones: ["Enfriar el radiador", "Reducir la fricción entre piezas internas", "Alimentar el sistema eléctrico", "Limpiar los filtros"],
+          opciones: ["Enfriar el radiador", "Reducir la fricción entre piezas internas", "Alimentar el sistema eléctrico", "Limpiar los filtros automáticamente"],
           correcta: 1
         },
         {
-          texto: "¿Qué sucede cuando los filtros del automóvil están sucios?",
-          opciones: ["El motor trabaja mejor", "La velocidad aumenta", "El rendimiento puede disminuir", "No pasa nada"],
+          tipo: "Verdadero/Falso",
+          texto: "El aceite de color negro en la varilla indica que está en perfecto estado y no necesita cambio.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 1
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué sucede cuando los filtros del automóvil están sucios o saturados?",
+          opciones: ["El motor trabaja mejor", "La velocidad máxima aumenta", "El rendimiento disminuye y aumenta el consumo de combustible", "No ocurre ningún cambio notable"],
           correcta: 2
         },
         {
-          texto: "¿Cuál de los siguientes es un líquido que usa el automóvil?",
-          opciones: ["Líquido de pintura", "Líquido de vidrios laterales", "Líquido refrigerante", "Líquido de asientos"],
+          tipo: "Opción múltiple",
+          texto: "¿Cuál de los siguientes es un líquido que utiliza el automóvil?",
+          opciones: ["Líquido de pintura", "Líquido de vidrios laterales", "Líquido refrigerante", "Líquido de transmisión aérea"],
           correcta: 2
         },
         {
+          tipo: "Verdadero/Falso",
+          texto: "Una llanta con presión incorrecta puede aumentar el consumo de combustible y provocar desgaste irregular.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Cada cuánto se recomienda cambiar el aceite con aceite mineral convencional?",
+          opciones: ["Cada 20,000 km", "Cada 5,000 km", "Solo cuando el motor falla", "Una vez al año sin importar el kilometraje"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "El filtro de cabina purifica el aire que entra al habitáculo del vehículo donde van los pasajeros.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
           texto: "¿Qué se recomienda revisar en una inspección visual del automóvil?",
-          opciones: ["Solo el color de la carrocería", "El radio y los asientos", "Estado de llantas, luces y mangueras", "El kilometraje únicamente"],
+          opciones: ["Solo el color de la carrocería", "El radio y los asientos interiores", "Estado de llantas, luces, mangueras y posibles fugas", "El kilometraje únicamente"],
           correcta: 2
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "Una batería con más de 3 años de uso puede presentar problemas de arranque aunque aparentemente funcione bien.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
         }
       ];
 
       function renderQuiz() {
         let html = "";
         PREGUNTAS.forEach((p, i) => {
-          html += `<div class="quiz-box"><p>${i+1}. ${p.texto}</p>`;
+          html += `<div class="quiz-box"><p>${i+1}. ${p.texto} <span class="tipo-badge">${p.tipo}</span></p>`;
           p.opciones.forEach((op, j) => {
             html += `<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
           });
@@ -140,7 +253,7 @@
 
         document.getElementById("btn-enviar").disabled = true;
         const puntaje = Math.round((correctas / PREGUNTAS.length) * 100);
-        const aprobado = correctas >= 3;
+        const aprobado = correctas >= MINIMO_PARA_APROBAR;
         const res = document.getElementById("resultado-quiz");
         res.style.display = "block";
         res.style.background = aprobado ? "rgba(50,150,50,0.25)" : "rgba(150,50,50,0.25)";

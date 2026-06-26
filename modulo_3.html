@@ -13,10 +13,15 @@
       .quiz-box label:hover { background: rgba(255,255,255,0.1); }
       .quiz-box label.correcta { background: rgba(80,200,80,0.25); }
       .quiz-box label.incorrecta { background: rgba(200,80,80,0.25); }
+      .tipo-badge { display: inline-block; font-size: 0.7em; font-weight: normal; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
       #resultado-quiz { display:none; margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; }
       #resultado-quiz h3 { font-size: 1.4em; margin-bottom: 8px; }
       .btn-quiz { margin-top: 10px; padding: 12px 30px; background: #5e42a6; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
       .btn-quiz:disabled { opacity: 0.5; cursor: not-allowed; }
+      .info-box { background: rgba(94,66,166,0.15); border-left: 4px solid #5e42a6; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+      table.tabla-mod { width:100%; border-collapse: collapse; margin: 14px 0; }
+      table.tabla-mod th { background: rgba(255,255,255,0.1); padding: 10px; text-align: left; }
+      table.tabla-mod td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
     </style>
   </head>
   <body class="is-preload">
@@ -35,34 +40,97 @@
 
           <h2>Protección civil</h2>
           <iframe src="pdfs/protecion.pdf" width="100%" height="600" style="border:none; border-radius: 8px;"></iframe>
-
           <br /><br />
 
-          <p>Un automóvil funciona mediante distintos sistemas que trabajan juntos para generar movimiento, mantener estabilidad, proporcionar energía y ofrecer seguridad.</p>
+          <p>Un automóvil funciona mediante distintos sistemas que trabajan en conjunto para generar movimiento, mantener estabilidad, proporcionar energía y ofrecer seguridad. Entender cada sistema permite realizar diagnósticos más precisos y un mantenimiento más efectivo.</p>
+
+          <div class="info-box">
+            <strong>Clave:</strong> Ningún sistema del automóvil funciona de manera completamente independiente. Cuando un sistema falla, frecuentemente afecta el desempeño de los demás.
+          </div>
 
           <hr />
-          <h2>Motor</h2>
-          <p>El motor es el sistema principal del automóvil porque transforma energía en movimiento. Durante el proceso se realiza <b>admisión, compresión, combustión y escape</b>. El mantenimiento del motor incluye revisión de aceite, limpieza y control de temperatura para reducir desgaste.</p>
+          <h2>Sistema de motor</h2>
+          <p>El motor es el sistema principal del automóvil porque transforma energía química (combustible) en energía mecánica (movimiento). El ciclo de trabajo del motor de 4 tiempos incluye:</p>
+          <table class="tabla-mod">
+            <tr><th>Tiempo</th><th>Descripción</th></tr>
+            <tr><td><strong>1. Admisión</strong></td><td>El pistón baja y entra la mezcla de aire y combustible al cilindro.</td></tr>
+            <tr><td><strong>2. Compresión</strong></td><td>El pistón sube y comprime la mezcla para aumentar su energía potencial.</td></tr>
+            <tr><td><strong>3. Combustión</strong></td><td>La bujía genera una chispa que inflama la mezcla, empujando el pistón hacia abajo con fuerza.</td></tr>
+            <tr><td><strong>4. Escape</strong></td><td>El pistón sube de nuevo y expulsa los gases quemados hacia el sistema de escape.</td></tr>
+          </table>
+          <p>El mantenimiento del motor incluye revisión de aceite, control de temperatura, limpieza de inyectores y verificación de bujías.</p>
 
           <hr />
           <h2>Sistema de frenos</h2>
-          <p>Los frenos permiten controlar velocidad y detener el automóvil cuando es necesario. Su funcionamiento depende del contacto entre componentes que generan fricción para disminuir movimiento.</p>
+          <p>Los frenos permiten controlar la velocidad y detener el automóvil de forma segura. Existen dos tipos principales:</p>
+          <ul>
+            <li><strong>Frenos de disco:</strong> utilizan una pinza que aprieta un disco metálico para generar fricción. Son más eficientes y se usan en las ruedas delanteras de la mayoría de los vehículos modernos.</li>
+            <li><strong>Frenos de tambor:</strong> usan zapatas que se expanden contra el interior de un tambor. Aún se usan en las ruedas traseras de muchos vehículos económicos.</li>
+          </ul>
+          <p>Las señales de frenos desgastados incluyen: ruido de rechinido al frenar, vibración en el pedal, mayor distancia de frenado y el vehículo se jala hacia un lado al frenar.</p>
+
+          <div class="info-box">
+            <strong>Seguridad:</strong> Los frenos son el sistema de seguridad más importante del vehículo. Nunca se debe posponer su revisión si se notan anomalías.
+          </div>
 
           <hr />
-          <h2>Suspensión</h2>
-          <p>La suspensión absorbe impactos y mantiene estabilidad durante el recorrido. También mejora comodidad y ayuda a conservar contacto entre las llantas y el camino.</p>
+          <h2>Sistema de suspensión</h2>
+          <p>La suspensión absorbe los impactos del camino y mantiene estabilidad durante el recorrido. Sus componentes principales son:</p>
+          <ul>
+            <li><strong>Amortiguadores:</strong> controlan el rebote del vehículo tras pasar por un bache.</li>
+            <li><strong>Resortes:</strong> soportan el peso del vehículo y absorben los golpes iniciales.</li>
+            <li><strong>Rótulas y terminales:</strong> permiten el movimiento articulado de las ruedas.</li>
+            <li><strong>Barra estabilizadora:</strong> reduce el balanceo del vehículo en las curvas.</li>
+          </ul>
+          <p>Un amortiguador en mal estado hace que el vehículo rebote en exceso, aumenta el desgaste de llantas y reduce el control en maniobras.</p>
 
           <hr />
           <h2>Sistema eléctrico</h2>
-          <p>El sistema eléctrico suministra energía a distintos componentes del automóvil. Elementos como <b>batería, alternador y cableado</b> trabajan para mantener operativos sistemas de encendido, iluminación y control.</p>
+          <p>El sistema eléctrico suministra energía a todos los componentes eléctricos y electrónicos del automóvil. Sus elementos principales son:</p>
+          <ul>
+            <li><strong>Batería:</strong> almacena energía para el arranque y sistemas en reposo.</li>
+            <li><strong>Alternador:</strong> genera electricidad cuando el motor está en marcha y recarga la batería.</li>
+            <li><strong>Sistema de arranque:</strong> el motor de arranque (marcha) usa la batería para hacer girar el motor.</li>
+            <li><strong>Cableado y fusibles:</strong> distribuyen la electricidad y protegen los circuitos de sobrecargas.</li>
+          </ul>
+
+          <hr />
+          <h2>Sistema de dirección</h2>
+          <p>La dirección permite al conductor controlar la trayectoria del vehículo. Los tipos más comunes son:</p>
+          <ul>
+            <li><strong>Dirección hidráulica:</strong> usa líquido a presión para facilitar el giro del volante.</li>
+            <li><strong>Dirección electrohidráulica:</strong> combina hidráulica con asistencia eléctrica.</li>
+            <li><strong>Dirección eléctrica (EPS):</strong> usa un motor eléctrico, más eficiente en consumo de combustible.</li>
+          </ul>
+
+          <hr />
+          <h2>Sistema de combustible</h2>
+          <p>El sistema de combustible almacena y suministra gasolina o diésel al motor. Sus componentes principales son:</p>
+          <ul>
+            <li><strong>Tanque de combustible:</strong> almacena el combustible de forma segura.</li>
+            <li><strong>Bomba de combustible:</strong> impulsa el combustible desde el tanque hasta el motor.</li>
+            <li><strong>Filtro de combustible:</strong> elimina impurezas para proteger el motor.</li>
+            <li><strong>Inyectores:</strong> dosifican con precisión el combustible que entra al motor.</li>
+          </ul>
+
+          <hr />
+          <h2>Sistema de escape</h2>
+          <p>El sistema de escape conduce los gases de combustión desde el motor hasta el exterior del vehículo. Sus funciones son:</p>
+          <ul>
+            <li>Expulsar los gases quemados de forma segura.</li>
+            <li>Reducir el ruido del motor mediante el silenciador.</li>
+            <li>Disminuir los contaminantes mediante el catalizador.</li>
+          </ul>
+          <p>Un escape en mal estado puede provocar ruidos excesivos, pérdida de potencia y, en casos graves, filtración de gases tóxicos hacia el habitáculo.</p>
 
           <hr />
           <h2>Relación entre sistemas</h2>
-          <p>Todos los sistemas trabajan de forma conjunta. El motor genera movimiento, el sistema eléctrico distribuye energía, la suspensión mantiene estabilidad y los frenos controlan desplazamiento. Comprender esta relación facilita el diagnóstico y mejora el mantenimiento.</p>
+          <p>Todos los sistemas trabajan de forma conjunta. Por ejemplo: el motor genera movimiento, el alternador aprovecha ese movimiento para generar electricidad, la batería almacena esa electricidad, los frenos usan energía hidráulica y eléctrica para detener el vehículo, y la suspensión mantiene el contacto de las llantas con el camino durante todo el proceso.</p>
+          <p>Comprender esta relación facilita el diagnóstico y mejora la calidad del mantenimiento. Cuando falla un sistema, frecuentemente hay que revisar también los sistemas relacionados.</p>
 
           <hr />
           <h2 id="actividad">Actividad final — Quiz del Módulo 3</h2>
-          <p>Responde las 5 preguntas para completar el módulo. Necesitas al menos 3 correctas para aprobar.</p>
+          <p>Responde las <strong>15 preguntas</strong> para completar el módulo. Necesitas al menos <strong>9 correctas</strong> para aprobar. Las preguntas incluyen opción múltiple y Verdadero/Falso.</p>
 
           <div id="quiz-area"></div>
           <button class="btn-quiz" id="btn-enviar" onclick="enviarQuiz()">Enviar respuestas</button>
@@ -86,30 +154,96 @@
     <script src="assets/js/main.js"></script>
     <script>
       const MODULO = 3;
+      const MINIMO_PARA_APROBAR = 9;
       const PREGUNTAS = [
         {
-          texto: "¿Cuál es el sistema principal del automóvil?",
+          tipo: "Opción múltiple",
+          texto: "¿Cuál es el sistema principal del automóvil que transforma energía en movimiento?",
           opciones: ["El sistema de frenos", "La suspensión", "El motor", "El sistema eléctrico"],
           correcta: 2
         },
         {
-          texto: "¿Qué etapas realiza el motor durante su funcionamiento?",
-          opciones: ["Arranque, parada y marcha", "Admisión, compresión, combustión y escape", "Entrada, proceso y salida", "Encendido y apagado"],
+          tipo: "Opción múltiple",
+          texto: "¿Qué etapas realiza el motor de 4 tiempos durante su ciclo de trabajo?",
+          opciones: ["Arranque, parada, marcha y espera", "Admisión, compresión, combustión y escape", "Entrada, proceso, salida y reposo", "Encendido, aceleración, frenado y apagado"],
           correcta: 1
         },
         {
-          texto: "¿Qué función cumple la suspensión?",
-          opciones: ["Controlar la velocidad", "Suministrar energía eléctrica", "Absorber impactos y mantener estabilidad", "Regular la temperatura del motor"],
+          tipo: "Verdadero/Falso",
+          texto: "En el tiempo de compresión, el pistón baja y entra la mezcla de aire y combustible al cilindro.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 1
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué función cumple la suspensión del automóvil?",
+          opciones: ["Controlar la velocidad del vehículo", "Suministrar energía eléctrica a los componentes", "Absorber impactos y mantener estabilidad", "Regular la temperatura del motor"],
           correcta: 2
         },
         {
+          tipo: "Verdadero/Falso",
+          texto: "Los frenos de disco son generalmente más eficientes que los frenos de tambor.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
           texto: "¿Qué elementos forman el sistema eléctrico del automóvil?",
-          opciones: ["Motor, frenos y llantas", "Batería, alternador y cableado", "Aceite, filtros y radiador", "Suspensión, dirección y frenos"],
+          opciones: ["Motor, frenos y llantas", "Batería, alternador y cableado", "Aceite, filtros y radiador", "Suspensión, dirección y escape"],
           correcta: 1
         },
         {
+          tipo: "Opción múltiple",
+          texto: "¿Cuál es la función del alternador en el sistema eléctrico?",
+          opciones: ["Almacenar energía para el arranque", "Generar electricidad cuando el motor está en marcha", "Controlar el consumo de combustible", "Reducir el ruido del motor"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "La barra estabilizadora de la suspensión reduce el balanceo del vehículo al tomar curvas.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué componente del sistema de combustible dosifica con precisión el combustible que entra al motor?",
+          opciones: ["La bomba de combustible", "El tanque de combustible", "Los inyectores", "El filtro de combustible"],
+          correcta: 2
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "El sistema de escape solo tiene la función de reducir el ruido del motor.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 1
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué señal indica que los frenos pueden estar desgastados?",
+          opciones: ["El vehículo arranca más rápido", "Ruido de rechinido al frenar", "El motor consume menos combustible", "Las llantas se inflan solas"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "Un amortiguador en mal estado aumenta el desgaste de llantas y reduce el control del vehículo.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué tipo de dirección usa líquido a presión para facilitar el giro del volante?",
+          opciones: ["Dirección eléctrica (EPS)", "Dirección hidráulica", "Dirección manual", "Dirección neumática"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "Cuando un sistema del automóvil falla, siempre es completamente independiente y no afecta a los demás sistemas.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 1
+        },
+        {
+          tipo: "Opción múltiple",
           texto: "¿Por qué es importante conocer la relación entre los sistemas del automóvil?",
-          opciones: ["Para cambiar el color del auto", "Para conducir más rápido", "Facilita el diagnóstico y mejora el mantenimiento", "No tiene importancia práctica"],
+          opciones: ["Para cambiar el color del auto", "Para conducir a mayor velocidad sin riesgo", "Facilita el diagnóstico y mejora la calidad del mantenimiento", "No tiene ninguna importancia práctica"],
           correcta: 2
         }
       ];
@@ -117,7 +251,7 @@
       function renderQuiz() {
         let html = "";
         PREGUNTAS.forEach((p, i) => {
-          html += `<div class="quiz-box"><p>${i+1}. ${p.texto}</p>`;
+          html += `<div class="quiz-box"><p>${i+1}. ${p.texto} <span class="tipo-badge">${p.tipo}</span></p>`;
           p.opciones.forEach((op, j) => {
             html += `<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
           });
@@ -144,7 +278,7 @@
 
         document.getElementById("btn-enviar").disabled = true;
         const puntaje = Math.round((correctas / PREGUNTAS.length) * 100);
-        const aprobado = correctas >= 3;
+        const aprobado = correctas >= MINIMO_PARA_APROBAR;
         const res = document.getElementById("resultado-quiz");
         res.style.display = "block";
         res.style.background = aprobado ? "rgba(50,150,50,0.25)" : "rgba(150,50,50,0.25)";

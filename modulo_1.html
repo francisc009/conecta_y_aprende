@@ -13,10 +13,15 @@
       .quiz-box label:hover { background: rgba(255,255,255,0.1); }
       .quiz-box label.correcta { background: rgba(80,200,80,0.25); }
       .quiz-box label.incorrecta { background: rgba(200,80,80,0.25); }
+      .tipo-badge { display: inline-block; font-size: 0.7em; font-weight: normal; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
       #resultado-quiz { display:none; margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; }
       #resultado-quiz h3 { font-size: 1.4em; margin-bottom: 8px; }
       .btn-quiz { margin-top: 10px; padding: 12px 30px; background: #5e42a6; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
       .btn-quiz:disabled { opacity: 0.5; cursor: not-allowed; }
+      .info-box { background: rgba(94,66,166,0.15); border-left: 4px solid #5e42a6; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+      table.tabla-mod { width:100%; border-collapse: collapse; margin: 14px 0; }
+      table.tabla-mod th { background: rgba(255,255,255,0.1); padding: 10px; text-align: left; }
+      table.tabla-mod td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
     </style>
   </head>
   <body class="is-preload">
@@ -34,8 +39,16 @@
           <h1 class="major">Introducción a la Mecánica Automotriz</h1>
 
           <p>La mecánica automotriz es una disciplina técnica enfocada en el estudio, mantenimiento y reparación de vehículos. Esta área combina conocimientos de sistemas mecánicos, eléctricos y electrónicos para garantizar el correcto funcionamiento del automóvil.</p>
-
           <p>Actualmente representa una de las áreas con mayor evolución tecnológica debido al desarrollo de motores más eficientes, sistemas computarizados y nuevas fuentes de energía.</p>
+
+          <div class="info-box">
+            <strong>Dato importante:</strong> La mecánica automotriz es uno de los oficios con mayor demanda laboral en México. Un técnico certificado puede generar ingresos propios y ofrecer servicios en su comunidad.
+          </div>
+
+          <hr />
+          <h2>Historia breve de la mecánica automotriz</h2>
+          <p>El automóvil moderno nació a finales del siglo XIX con los primeros motores de combustión interna. Con el tiempo, los vehículos se volvieron más complejos e incorporaron sistemas eléctricos, hidráulicos y electrónicos. Hoy en día, la mecánica automotriz abarca también tecnologías como los vehículos híbridos y eléctricos.</p>
+          <p>En México, el sector automotriz es uno de los principales motores económicos del país. Conocer mecánica brinda oportunidades de empleo tanto en talleres independientes como en grandes empresas.</p>
 
           <hr />
           <h2>¿Qué estudia la mecánica automotriz?</h2>
@@ -43,28 +56,62 @@
           <p>El mecánico automotriz no solo realiza reparaciones; también ejecuta diagnósticos, inspecciones preventivas y mantenimiento para aumentar la seguridad y vida útil del vehículo.</p>
 
           <hr />
+          <h2>Tipos de mecánica automotriz</h2>
+          <table class="tabla-mod">
+            <tr><th>Tipo</th><th>Descripción</th></tr>
+            <tr><td><strong>Mecánica general</strong></td><td>Mantenimiento y reparación de motor, transmisión, frenos y suspensión.</td></tr>
+            <tr><td><strong>Mecánica eléctrica</strong></td><td>Diagnóstico y reparación de sistemas eléctricos y electrónicos.</td></tr>
+            <tr><td><strong>Hojalatería y pintura</strong></td><td>Reparación de carrocería y acabados exteriores.</td></tr>
+            <tr><td><strong>Mecánica diésel</strong></td><td>Especializada en motores diésel usados en camiones y maquinaria pesada.</td></tr>
+          </table>
+
+          <hr />
           <h2>Importancia del mantenimiento</h2>
-          <p><b>Mantenimiento preventivo:</b> se realiza antes de que ocurra una falla mediante revisiones y cambios programados.</p>
-          <p><b>Mantenimiento correctivo:</b> se realiza después de detectar una avería para restaurar el funcionamiento del vehículo.</p>
+          <p><b>Mantenimiento preventivo:</b> se realiza antes de que ocurra una falla mediante revisiones y cambios programados. Ejemplo: cambio de aceite, revisión de frenos.</p>
+          <p><b>Mantenimiento correctivo:</b> se realiza después de detectar una avería para restaurar el funcionamiento del vehículo. Ejemplo: cambio de una llanta ponchada, reparación de un faro quemado.</p>
 
           <hr />
           <h2>Principales componentes del automóvil</h2>
           <p>
-            <b>Motor:</b> transforma energía en movimiento.<br />
-            <b>Batería:</b> alimenta los sistemas eléctricos.<br />
-            <b>Radiador:</b> regula la temperatura.<br />
-            <b>Transmisión:</b> transmite potencia a las ruedas.<br />
-            <b>Frenos:</b> permiten disminuir o detener la velocidad.<br />
-            <b>Suspensión:</b> mejora estabilidad y absorbe impactos.
+            <b>Motor:</b> transforma energía en movimiento. Es el corazón del vehículo.<br />
+            <b>Batería:</b> alimenta los sistemas eléctricos y permite el arranque del motor.<br />
+            <b>Radiador:</b> regula la temperatura del motor evitando el sobrecalentamiento.<br />
+            <b>Transmisión:</b> transmite potencia a las ruedas y permite cambiar velocidades.<br />
+            <b>Frenos:</b> permiten disminuir o detener la velocidad del vehículo.<br />
+            <b>Suspensión:</b> mejora estabilidad y absorbe impactos del camino.<br />
+            <b>Dirección:</b> permite al conductor controlar la trayectoria del vehículo.<br />
+            <b>Escape:</b> expulsa los gases resultantes de la combustión del motor.
           </p>
 
           <hr />
+          <h2>Herramientas básicas del mecánico</h2>
+          <p>Un mecánico automotriz utiliza diversas herramientas en su trabajo diario:</p>
+          <ul>
+            <li><strong>Llaves de tubo y dados:</strong> para apretar y aflojar tornillos y tuercas.</li>
+            <li><strong>Desarmadores:</strong> planos y de cruz para diferentes tipos de tornillos.</li>
+            <li><strong>Gato hidráulico:</strong> para elevar el vehículo de forma segura.</li>
+            <li><strong>Multímetro:</strong> para medir voltaje, corriente y resistencia en sistemas eléctricos.</li>
+            <li><strong>Manómetro:</strong> para medir la presión de aceite y de llantas.</li>
+          </ul>
+
+          <hr />
           <h2>Seguridad dentro del taller</h2>
-          <p>Las medidas de seguridad incluyen utilizar lentes de protección, guantes, evitar el contacto con piezas calientes y mantener ventilación adecuada cuando el motor se encuentre encendido.</p>
+          <p>Las medidas de seguridad son fundamentales para evitar accidentes. Incluyen:</p>
+          <ul>
+            <li>Usar lentes de protección y guantes al manipular piezas.</li>
+            <li>Evitar el contacto con piezas calientes o con el motor encendido.</li>
+            <li>Mantener ventilación adecuada para evitar acumulación de gases.</li>
+            <li>No usar ropa suelta ni accesorios que puedan engancharse en piezas giratorias.</li>
+            <li>Tener un extintor accesible en el área de trabajo.</li>
+          </ul>
+
+          <div class="info-box">
+            <strong>Recuerda:</strong> Un taller ordenado y limpio es un taller seguro. Mantener las herramientas en su lugar y el piso libre de derrames reduce el riesgo de accidentes.
+          </div>
 
           <hr />
           <h2 id="actividad">Actividad final — Quiz del Módulo 1</h2>
-          <p>Responde las 5 preguntas para completar el módulo. Necesitas al menos 3 correctas para aprobar.</p>
+          <p>Responde las <strong>5 preguntas</strong> para completar el módulo. Necesitas al menos <strong>3 correctas</strong> para aprobar. Las preguntas incluyen opción múltiple y Verdadero/Falso.</p>
 
           <div id="quiz-area"></div>
 
@@ -90,28 +137,34 @@
     <script src="assets/js/main.js"></script>
     <script>
       const MODULO = 1;
+      const MINIMO_PARA_APROBAR = 3;
       const PREGUNTAS = [
         {
+          tipo: "Opción múltiple",
           texto: "¿Qué componente del automóvil transforma energía en movimiento?",
           opciones: ["La batería", "El radiador", "El motor", "Los frenos"],
           correcta: 2
         },
         {
+          tipo: "Opción múltiple",
           texto: "¿Qué tipo de mantenimiento se realiza ANTES de que ocurra una falla?",
           opciones: ["Correctivo", "Urgente", "Preventivo", "Reparativo"],
           correcta: 2
         },
         {
-          texto: "¿Qué componente regula la temperatura del motor?",
-          opciones: ["La batería", "La transmisión", "La suspensión", "El radiador"],
-          correcta: 3
+          tipo: "Verdadero/Falso",
+          texto: "El radiador del automóvil tiene como función regular la temperatura del motor.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
         },
         {
-          texto: "¿Para qué sirve el equipo de protección personal en el taller?",
-          opciones: ["Trabajar más rápido", "Reducir riesgos de accidente", "Verse bien", "No es necesario"],
+          tipo: "Verdadero/Falso",
+          texto: "No es necesario usar equipo de protección personal dentro del taller si se tiene experiencia.",
+          opciones: ["Verdadero", "Falso"],
           correcta: 1
         },
         {
+          tipo: "Opción múltiple",
           texto: "¿Qué función cumple la suspensión del vehículo?",
           opciones: ["Alimentar el sistema eléctrico", "Controlar la velocidad", "Mejorar estabilidad y absorber impactos", "Regular la temperatura"],
           correcta: 2
@@ -121,7 +174,7 @@
       function renderQuiz() {
         let html = "";
         PREGUNTAS.forEach((p, i) => {
-          html += `<div class="quiz-box"><p>${i+1}. ${p.texto}</p>`;
+          html += `<div class="quiz-box"><p>${i+1}. ${p.texto} <span class="tipo-badge">${p.tipo}</span></p>`;
           p.opciones.forEach((op, j) => {
             html += `<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
           });
@@ -148,7 +201,7 @@
 
         document.getElementById("btn-enviar").disabled = true;
         const puntaje = Math.round((correctas / PREGUNTAS.length) * 100);
-        const aprobado = correctas >= 3;
+        const aprobado = correctas >= MINIMO_PARA_APROBAR;
         const res = document.getElementById("resultado-quiz");
         res.style.display = "block";
         res.style.background = aprobado ? "rgba(50,150,50,0.25)" : "rgba(150,50,50,0.25)";

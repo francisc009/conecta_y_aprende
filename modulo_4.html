@@ -13,10 +13,19 @@
       .quiz-box label:hover { background: rgba(255,255,255,0.1); }
       .quiz-box label.correcta { background: rgba(80,200,80,0.25); }
       .quiz-box label.incorrecta { background: rgba(200,80,80,0.25); }
+      .tipo-badge { display: inline-block; font-size: 0.7em; font-weight: normal; background: rgba(255,255,255,0.1); border-radius: 4px; padding: 2px 7px; margin-left: 8px; vertical-align: middle; }
       #resultado-quiz { display:none; margin-top: 20px; padding: 20px; border-radius: 10px; text-align: center; }
       #resultado-quiz h3 { font-size: 1.4em; margin-bottom: 8px; }
       .btn-quiz { margin-top: 10px; padding: 12px 30px; background: #5e42a6; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
       .btn-quiz:disabled { opacity: 0.5; cursor: not-allowed; }
+      .info-box { background: rgba(94,66,166,0.15); border-left: 4px solid #5e42a6; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+      .warn-box { background: rgba(200,120,30,0.15); border-left: 4px solid #d08030; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 16px 0; }
+      table.tabla-mod { width:100%; border-collapse: collapse; margin: 14px 0; }
+      table.tabla-mod th { background: rgba(255,255,255,0.1); padding: 10px; text-align: left; }
+      table.tabla-mod td { padding: 9px 10px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .pasos-lista { counter-reset: pasos; list-style: none; padding: 0; }
+      .pasos-lista li { counter-increment: pasos; padding: 10px 10px 10px 44px; position: relative; margin-bottom: 8px; background: rgba(255,255,255,0.04); border-radius: 6px; }
+      .pasos-lista li::before { content: counter(pasos); position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: #5e42a6; color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8em; font-weight: bold; }
     </style>
   </head>
   <body class="is-preload">
@@ -33,35 +42,125 @@
         <div class="inner">
           <h1 class="major">Diagnóstico Básico del Automóvil</h1>
 
-          <p>El diagnóstico básico automotriz consiste en observar, analizar e identificar cambios en el funcionamiento de un vehículo. Es el primer paso para tomar decisiones sobre el mantenimiento o reparación que un vehículo necesita.</p>
+          <p>El diagnóstico básico automotriz consiste en observar, analizar e identificar cambios en el funcionamiento de un vehículo. Es el primer paso para tomar decisiones informadas sobre el mantenimiento o reparación que un vehículo necesita.</p>
+
+          <div class="info-box">
+            <strong>Habilidad clave:</strong> Un buen mecánico no solo repara — diagnostica con precisión primero. Identificar correctamente el problema evita cambios innecesarios de piezas y ahorra tiempo y dinero.
+          </div>
 
           <hr />
           <h2>Importancia del diagnóstico</h2>
-          <p>El diagnóstico permite identificar situaciones antes de que se conviertan en problemas mayores. Muchas veces un cambio pequeño puede ser una señal que indique la necesidad de revisar algún componente o realizar mantenimiento. Observar y registrar información ayuda a comprender mejor el comportamiento del vehículo.</p>
+          <p>El diagnóstico permite identificar situaciones antes de que se conviertan en problemas mayores. Muchas veces un cambio pequeño puede ser una señal que indique la necesidad de revisar algún componente o realizar mantenimiento.</p>
+          <p>Observar y registrar información de forma sistemática ayuda a:</p>
+          <ul>
+            <li>Comunicar el problema con claridad al mecánico o al cliente.</li>
+            <li>Tomar decisiones de reparación basadas en evidencia real.</li>
+            <li>Llevar un historial del comportamiento del vehículo.</li>
+            <li>Evitar diagnósticos incorrectos y gastos innecesarios.</li>
+          </ul>
 
           <hr />
           <h2>Paso 1: Observación inicial</h2>
-          <p>Consiste en hacer una revisión general del estado del vehículo antes de encenderlo. Se identifican señales visibles como manchas de líquidos, deformaciones o daños. Esta etapa permite tener un panorama inicial del estado del vehículo.</p>
+          <p>Consiste en hacer una revisión general del estado del vehículo <strong>antes de encenderlo</strong>. Se identifican señales visibles como:</p>
+          <ul>
+            <li>Manchas de líquidos debajo del vehículo (aceite, refrigerante, líquido de frenos).</li>
+            <li>Deformaciones, abolladuras o daños en la carrocería.</li>
+            <li>Estado de las llantas: presión, desgaste y condición visual.</li>
+            <li>Estado de mangueras, cables y conexiones visibles.</li>
+          </ul>
 
           <hr />
-          <h2>Paso 2: Revisión del tablero</h2>
-          <p>El tablero de instrumentos proporciona información clave cuando el motor está encendido: temperatura del motor, niveles de combustible y presión de aceite. Las luces indicadoras señalan condiciones específicas que requieren atención.</p>
+          <h2>Paso 2: Revisión del tablero de instrumentos</h2>
+          <p>El tablero proporciona información clave cuando el motor está encendido. Las luces indicadoras más importantes son:</p>
+          <table class="tabla-mod">
+            <tr><th>Luz indicadora</th><th>Significado</th><th>Acción recomendada</th></tr>
+            <tr><td>Temperatura alta</td><td>Motor sobrecalentado</td><td>Detener el vehículo de inmediato</td></tr>
+            <tr><td>Presión de aceite</td><td>Nivel o presión de aceite bajo</td><td>Revisar nivel y detener motor</td></tr>
+            <tr><td>Batería</td><td>Fallo en el sistema de carga</td><td>Revisar alternador y batería</td></tr>
+            <tr><td>Motor (Check Engine)</td><td>Fallo detectado por la ECU</td><td>Leer códigos con escáner OBD</td></tr>
+            <tr><td>Frenos (ABS)</td><td>Fallo en el sistema de frenado</td><td>Revisar frenos de inmediato</td></tr>
+          </table>
+
+          <div class="warn-box">
+            <strong>Atención:</strong> Nunca ignorar las luces del tablero. Una luz encendida puede indicar un problema menor o uno grave — siempre debe revisarse a tiempo.
+          </div>
 
           <hr />
           <h2>Paso 3: Escucha activa</h2>
-          <p>Se escuchan los ruidos que produce el vehículo durante su funcionamiento. Distintos tipos de sonidos pueden indicar situaciones específicas: golpeteo, silbido, vibración o rechinado.</p>
+          <p>Se escuchan con atención los ruidos que produce el vehículo durante su funcionamiento. Cada tipo de sonido puede indicar una condición específica:</p>
+          <table class="tabla-mod">
+            <tr><th>Sonido</th><th>Posible causa</th></tr>
+            <tr><td>Golpeteo al acelerar</td><td>Fallo en bujías, detonación prematura del combustible</td></tr>
+            <tr><td>Silbido en frenos</td><td>Pastillas de freno desgastadas</td></tr>
+            <tr><td>Vibración en el volante</td><td>Ruedas desbalanceadas o problemas de dirección</td></tr>
+            <tr><td>Rechinido al girar</td><td>Fallo en la dirección o en las rótulas</td></tr>
+            <tr><td>Ruido de motor al arrancar</td><td>Fallo en motor de arranque o batería débil</td></tr>
+            <tr><td>Golpe seco en baches</td><td>Amortiguadores en mal estado</td></tr>
+          </table>
 
           <hr />
           <h2>Paso 4: Registro de observaciones</h2>
-          <p>Registrar las observaciones ayuda a comparar resultados, comunicar hallazgos al mecánico y mantener un seguimiento del estado del vehículo a lo largo del tiempo.</p>
+          <p>Registrar las observaciones es una práctica profesional fundamental. Un buen registro incluye:</p>
+          <ul>
+            <li>Fecha y kilometraje al momento de la observación.</li>
+            <li>Descripción del síntoma: cuándo ocurre, con qué frecuencia, en qué condiciones.</li>
+            <li>Área del vehículo donde se detecta el problema.</li>
+            <li>Fotografías si es posible (manchas, deformaciones, etc.).</li>
+          </ul>
+          <p>Este registro ayuda a comparar resultados en el tiempo y a comunicar los hallazgos de forma clara al mecánico o al propietario del vehículo.</p>
+
+          <hr />
+          <h2>Herramientas de diagnóstico</h2>
+          <p>Los mecánicos utilizan herramientas especializadas para diagnósticos más precisos:</p>
+          <ul>
+            <li><strong>Escáner OBD-II:</strong> se conecta al puerto diagnóstico del vehículo y lee los códigos de error almacenados por la computadora del auto (ECU).</li>
+            <li><strong>Multímetro:</strong> mide voltaje, corriente y resistencia en el sistema eléctrico.</li>
+            <li><strong>Manómetro de compresión:</strong> mide la presión de cada cilindro para detectar desgaste interno.</li>
+            <li><strong>Lámpara de tiempo:</strong> permite verificar el encendido y ajustar el tiempo de la ignición.</li>
+            <li><strong>Cámara endoscópica:</strong> permite ver el interior del motor sin desarmarlo.</li>
+          </ul>
+
+          <hr />
+          <h2>Códigos de diagnóstico OBD</h2>
+          <p>Los vehículos modernos almacenan códigos de error cuando la computadora detecta una falla. Estos códigos se llaman <strong>DTC (Diagnostic Trouble Codes)</strong> y siguen un formato estándar:</p>
+          <table class="tabla-mod">
+            <tr><th>Código</th><th>Sistema</th></tr>
+            <tr><td>P0xxx</td><td>Motor y transmisión (los más comunes)</td></tr>
+            <tr><td>B0xxx</td><td>Carrocería (airbags, ventanas, cerraduras)</td></tr>
+            <tr><td>C0xxx</td><td>Chasis (ABS, suspensión activa)</td></tr>
+            <tr><td>U0xxx</td><td>Comunicación entre módulos</td></tr>
+          </table>
+          <p>Leer e interpretar estos códigos permite acotar el diagnóstico antes de desmontar piezas innecesariamente.</p>
+
+          <div class="info-box">
+            <strong>Dato útil:</strong> Un código OBD no siempre indica exactamente qué pieza está dañada — indica qué parámetro está fuera de rango. Por eso el diagnóstico completo requiere también pruebas físicas y experiencia del mecánico.
+          </div>
+
+          <hr />
+          <h2>Señales de advertencia más comunes</h2>
+          <p>Algunos síntomas frecuentes y su posible significado:</p>
+          <ul>
+            <li><strong>Humo blanco del escape:</strong> puede indicar quema de refrigerante, lo que sugiere falla en la junta de culata.</li>
+            <li><strong>Humo azul del escape:</strong> indica que el motor está quemando aceite, señal de desgaste interno.</li>
+            <li><strong>Humo negro del escape:</strong> la mezcla está muy rica en combustible, puede ser inyector sucio o falla en el sensor de oxígeno.</li>
+            <li><strong>Motor que jalona o falla:</strong> problemas en bujías, inyectores o sistema de encendido.</li>
+            <li><strong>Consumo excesivo de combustible:</strong> puede deberse a filtro de aire sucio, inyectores sucios o neumáticos mal inflados.</li>
+          </ul>
 
           <hr />
           <h2>Mantenimiento programado</h2>
-          <p>El mantenimiento programado favorece conservar el funcionamiento del vehículo y prevenir cambios mayores. Seguir los intervalos recomendados reduce el riesgo de fallas inesperadas.</p>
+          <p>El mantenimiento programado es la base para conservar el funcionamiento del vehículo y prevenir fallas. Cada fabricante especifica los intervalos recomendados en el manual del propietario.</p>
+          <p>Seguir el plan de mantenimiento programado:</p>
+          <ol class="pasos-lista">
+            <li>Reduce el riesgo de fallas inesperadas en el camino.</li>
+            <li>Conserva el valor del vehículo al momento de reventa.</li>
+            <li>Garantiza que todos los sistemas funcionen dentro de sus parámetros normales.</li>
+            <li>Permite detectar el desgaste gradual de piezas antes de que fallen por completo.</li>
+          </ol>
 
           <hr />
           <h2 id="actividad">Actividad final — Quiz del Módulo 4</h2>
-          <p>Responde las 5 preguntas para completar el módulo. Necesitas al menos 3 correctas para aprobar.</p>
+          <p>Responde las <strong>19 preguntas</strong> para completar el módulo. Necesitas al menos <strong>12 correctas</strong> para aprobar. Las preguntas incluyen opción múltiple y Verdadero/Falso.</p>
 
           <div id="quiz-area"></div>
           <button class="btn-quiz" id="btn-enviar" onclick="enviarQuiz()">Enviar respuestas</button>
@@ -85,38 +184,128 @@
     <script src="assets/js/main.js"></script>
     <script>
       const MODULO = 4;
+      const MINIMO_PARA_APROBAR = 12;
       const PREGUNTAS = [
         {
+          tipo: "Opción múltiple",
           texto: "¿En qué consiste el diagnóstico básico automotriz?",
-          opciones: ["Cambiar piezas del motor sin revisar", "Observar, analizar e identificar cambios en el funcionamiento", "Solo pintar el automóvil", "Encender y apagar el auto repetidamente"],
+          opciones: ["Cambiar piezas del motor sin revisar primero", "Observar, analizar e identificar cambios en el funcionamiento del vehículo", "Solo pintar y lavar el automóvil", "Encender y apagar el auto repetidamente"],
           correcta: 1
         },
         {
+          tipo: "Opción múltiple",
           texto: "¿Cuál es el primer paso del diagnóstico básico?",
-          opciones: ["Revisar el tablero con el motor encendido", "Registrar observaciones en papel", "Observación inicial del vehículo antes de encenderlo", "Llamar al mecánico inmediatamente"],
+          opciones: ["Revisar el tablero con el motor encendido", "Registrar observaciones en papel", "Observación inicial del vehículo antes de encenderlo", "Conectar el escáner OBD de inmediato"],
           correcta: 2
         },
         {
-          texto: "¿Para qué sirve registrar las observaciones durante el diagnóstico?",
-          opciones: ["Para hacer el trabajo más lento", "No tiene ninguna utilidad", "Para comparar resultados y mantener seguimiento del vehículo", "Solo para mostrárselo al dueño"],
-          correcta: 2
-        },
-        {
-          texto: "¿Qué información proporciona el tablero de instrumentos?",
-          opciones: ["Solo la velocidad del vehículo", "Temperatura, niveles y condiciones del funcionamiento", "El nombre del mecánico asignado", "El precio del combustible"],
+          tipo: "Verdadero/Falso",
+          texto: "Ignorar las luces indicadoras del tablero no representa ningún riesgo si el vehículo sigue funcionando.",
+          opciones: ["Verdadero", "Falso"],
           correcta: 1
         },
         {
-          texto: "¿Qué favorece el mantenimiento programado?",
-          opciones: ["Aumentar el consumo de combustible", "Que el vehículo falle más seguido", "Conservar el funcionamiento y prevenir cambios mayores", "Ninguna de las anteriores"],
+          tipo: "Opción múltiple",
+          texto: "¿Qué indica la luz de temperatura alta en el tablero?",
+          opciones: ["El aire acondicionado está activado", "El motor está sobrecalentado", "La batería necesita carga", "El combustible está bajo"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "Un golpeteo al acelerar puede indicar fallo en las bujías o detonación prematura del combustible.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Para qué sirve registrar las observaciones durante el diagnóstico?",
+          opciones: ["Para hacer el trabajo más lento", "No tiene ninguna utilidad práctica", "Para comparar resultados y comunicar hallazgos con claridad", "Solo para mostrárselo al dueño del taller"],
           correcta: 2
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué herramienta lee los códigos de error almacenados por la computadora del automóvil?",
+          opciones: ["El manómetro de compresión", "El escáner OBD-II", "El multímetro", "La lámpara de tiempo"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "Los códigos OBD con prefijo P corresponden a fallas en el motor y la transmisión.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué puede indicar humo blanco saliendo del escape del vehículo?",
+          opciones: ["El motor está funcionando perfectamente", "El sistema eléctrico tiene una fuga", "Quema de refrigerante, posible falla en junta de culata", "Las llantas están desgastadas"],
+          correcta: 2
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "El humo azul del escape indica que el motor está quemando aceite internamente.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué información proporciona el tablero de instrumentos durante el diagnóstico?",
+          opciones: ["Solo la velocidad del vehículo", "Temperatura, niveles y condiciones del funcionamiento mediante luces indicadoras", "El nombre del mecánico asignado", "El precio del combustible actual"],
+          correcta: 1
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué puede causar un consumo excesivo de combustible?",
+          opciones: ["Llantas bien infladas y filtro limpio", "Filtro de aire sucio, inyectores sucios o neumáticos mal inflados", "Batería completamente cargada", "Motor recién afinado"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "La cámara endoscópica permite ver el interior del motor sin necesidad de desarmarlo.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué favorece el mantenimiento programado del automóvil?",
+          opciones: ["Aumentar el consumo de combustible", "Que el vehículo falle con mayor frecuencia", "Conservar el funcionamiento y prevenir fallas inesperadas", "Reducir el valor del vehículo al revender"],
+          correcta: 2
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "Un código de diagnóstico OBD siempre indica exactamente qué pieza está dañada sin necesidad de pruebas adicionales.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 1
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué sonido puede indicar que los amortiguadores están en mal estado?",
+          opciones: ["Silbido al frenar", "Golpe seco al pasar por baches", "Rechinido al girar el volante", "Vibración en el pedal del acelerador"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "El manómetro de compresión mide la presión de cada cilindro del motor para detectar desgaste interno.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
+        },
+        {
+          tipo: "Opción múltiple",
+          texto: "¿Qué debe incluir un buen registro de observaciones durante el diagnóstico?",
+          opciones: ["Solo el nombre del conductor", "Fecha, kilometraje, descripción del síntoma y área del vehículo afectada", "Únicamente una fotografía del vehículo", "El costo estimado de la reparación"],
+          correcta: 1
+        },
+        {
+          tipo: "Verdadero/Falso",
+          texto: "Una vibración en el volante puede ser señal de ruedas desbalanceadas o problemas en la dirección.",
+          opciones: ["Verdadero", "Falso"],
+          correcta: 0
         }
       ];
 
       function renderQuiz() {
         let html = "";
         PREGUNTAS.forEach((p, i) => {
-          html += `<div class="quiz-box"><p>${i+1}. ${p.texto}</p>`;
+          html += `<div class="quiz-box"><p>${i+1}. ${p.texto} <span class="tipo-badge">${p.tipo}</span></p>`;
           p.opciones.forEach((op, j) => {
             html += `<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
           });
@@ -143,7 +332,7 @@
 
         document.getElementById("btn-enviar").disabled = true;
         const puntaje = Math.round((correctas / PREGUNTAS.length) * 100);
-        const aprobado = correctas >= 3;
+        const aprobado = correctas >= MINIMO_PARA_APROBAR;
         const res = document.getElementById("resultado-quiz");
         res.style.display = "block";
         res.style.background = aprobado ? "rgba(50,150,50,0.25)" : "rgba(150,50,50,0.25)";
