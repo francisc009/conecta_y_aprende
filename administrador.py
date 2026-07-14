@@ -10,10 +10,11 @@ CORS(app)
 # CONEXIÓN A MONGODB
 # =========================
 cliente = MongoClient("mongodb://localhost:27017/")
-db = cliente["conecta_aprende"]
+db = cliente["conecta_aprende2"]
 
 usuarios = db["usuarios"]
-admins = db["admins"]
+admins   = db["admins"]
+progreso = db["progreso"]
 
 # =========================
 # LOGIN ADMIN

@@ -1,0 +1,56 @@
+ * Serving Flask app 'server'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.24.0.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 698-197-159
+127.0.0.1 - - [26/Jun/2026 03:59:44] "GET /assets/js/jquery.scrolly.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:44] "GET /assets/js/browser.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:44] "GET /assets/js/breakpoints.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:44] "GET /assets/js/jquery.scrollex.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:44] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:44] "GET /images/modulo4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:44] "GET /assets/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:44] "GET /assets/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:45] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:47] "[36mGET /index.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:48] "GET /assets/css/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:48] "GET /images/pic01.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:48] "GET /images/logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:48] "GET /images/pic03.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:48] "GET /images/pic02.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:49] "GET /assets/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:49] "GET /assets/css/fontawesome-all.min.css HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:49] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:50] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:50] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[35m[1mGET /images/modulo4.jpg HTTP/1.1[0m" 206 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[33mGET /assets/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "GET /assets/css/images/intro.svg HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[35m[1mGET /images/modulo4.jpg HTTP/1.1[0m" 206 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[33mGET /assets/webfonts/fa-solid-900.woff HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/Jun/2026 03:59:51] "[33mGET /assets/webfonts/fa-solid-900.ttf HTTP/1.1[0m" 404 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "GET /modulo_1.html HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:01] "[33mGET /videos/modulo1.mp4 HTTP/1.1[0m" 404 -
+ * Detected change in '/home/runner/workspace/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 698-197-159
+127.0.0.1 - - [26/Jun/2026 04:00:13] "[36mGET / HTTP/1.1[0m" 304 -

@@ -1,0 +1,281 @@
+ * Serving Flask app 'server'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.24.0.2:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-510-511
+127.0.0.1 - - [26/Jun/2026 04:00:15] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:23] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:31] "POST /registro HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:00:31] "POST /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:00:31] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:00:44] "[36mGET /index.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:44] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:44] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:44] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:44] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:44] "[36mGET /images/pic02.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:44] "[36mGET /images/pic01.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /assets/css/images/intro.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /images/pic03.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "GET /assets/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:45] "[36mGET /images/modulo4.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:00:56] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:01] "[36mGET /admin.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:02] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:06] "POST /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:01:15] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:33] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:36] "[36mGET /admin.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:36] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:46] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:01:49] "POST /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:02:17] "[36mGET /admin.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:02:17] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:02:21] "POST /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:02:34] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:02:50] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:03:25] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "[36mGET /inicio.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /modulo_1.html HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/js/jquery.scrollex.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/js/jquery.scrolly.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/css/main.css HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/js/breakpoints.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/js/jquery.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/js/browser.min.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/js/util.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:38] "GET /assets/css/fontawesome-all.min.css HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:42] "GET /admin.html HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:03:42] "GET /images/logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /modulo_1.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:08] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:13] "POST /registro HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:04:16] "[36mGET /index.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:16] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:16] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:16] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:16] "[36mGET /images/pic01.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:16] "[36mGET /images/pic02.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:16] "[36mGET /images/pic03.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/css/images/intro.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /images/modulo4.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:17] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:18] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:20] "GET /quienes_somos.html HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "GET /images/quienes.png HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:22] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:30] "[36mGET /index.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:30] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /images/pic01.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /images/pic02.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /images/pic03.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/webfonts/fa-solid-900.woff2 HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/css/images/intro.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:31] "[36mGET /images/modulo4.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:34] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:46] "GET /modulo_2.html HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:04:48] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:11] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:20] "[36mGET /index.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/css/main.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /images/pic01.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /images/pic02.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/js/jquery.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /images/pic03.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/js/jquery.scrollex.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/js/jquery.scrolly.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/js/browser.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/css/fontawesome-all.min.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/js/breakpoints.min.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/js/util.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /assets/js/main.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:22] "[36mGET /images/modulo4.jpg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:27] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:32] "[36mGET /admin.html HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:34] "[36mGET /images/logo.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:41] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:50] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:05:55] "POST /admin/login HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:05:56] "GET /funciones_admin.html HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:05:56] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:05:56] "GET /admins HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:04] "DELETE /usuario/35 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:05] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:06] "DELETE /usuario/34 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:06] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:06] "DELETE /usuario/33 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:07] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:07] "DELETE /usuario/32 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:07] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:08] "DELETE /usuario/31 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:08] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:08] "DELETE /usuario/31 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:09] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:10] "DELETE /usuario/30 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:10] "DELETE /usuario/30 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:10] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:10] "DELETE /usuario/30 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:10] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:10] "DELETE /usuario/30 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:11] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:11] "DELETE /usuario/29 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:11] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:11] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "DELETE /usuario/28 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "DELETE /usuario/28 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "DELETE /usuario/27 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "DELETE /usuario/27 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:12] "DELETE /usuario/26 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "DELETE /usuario/26 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "DELETE /usuario/25 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "DELETE /usuario/25 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:13] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:06:14] "DELETE /usuario/24 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:14] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:14] "DELETE /usuario/24 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:14] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:14] "DELETE /usuario/23 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:14] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:14] "DELETE /usuario/22 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "DELETE /usuario/22 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "DELETE /usuario/21 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "DELETE /usuario/21 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "DELETE /usuario/20 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:15] "DELETE /usuario/20 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:16] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:16] "DELETE /usuario/19 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:16] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:16] "DELETE /usuario/18 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:16] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:17] "DELETE /usuario/17 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:17] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:17] "DELETE /usuario/17 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:17] "DELETE /usuario/16 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:17] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:17] "DELETE /usuario/16 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:17] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:18] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:18] "DELETE /usuario/15 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:18] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:19] "DELETE /usuario/14 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:19] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:19] "DELETE /usuario/14 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:19] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:20] "DELETE /usuario/13 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:20] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:20] "DELETE /usuario/12 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:21] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:21] "DELETE /usuario/11 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:21] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:21] "DELETE /usuario/11 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:21] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:22] "DELETE /usuario/10 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:22] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:23] "DELETE /usuario/9 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:23] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:25] "DELETE /usuario/8 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:26] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:27] "DELETE /usuario/7 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:27] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:28] "DELETE /usuario/6 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:28] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:32] "DELETE /usuario/5 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:32] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:34] "DELETE /usuario/3 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:34] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:34] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:06:35] "DELETE /usuario/4 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:35] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:37] "DELETE /usuario/2 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:37] "GET /usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [26/Jun/2026 04:06:47] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:07:16] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:07:54] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:08:25] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [26/Jun/2026 04:08:53] "GET / HTTP/1.1" 200 -
+ * Detected change in '/home/runner/workspace/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-510-511
+127.0.0.1 - - [26/Jun/2026 04:09:17] "[36mGET / HTTP/1.1[0m" 304 -
+ * Detected change in '/home/runner/workspace/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-510-511
+ * Detected change in '/home/runner/workspace/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-510-511
+ * Detected change in '/home/runner/workspace/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-510-511
+127.0.0.1 - - [26/Jun/2026 04:09:22] "[36mGET / HTTP/1.1[0m" 304 -
+ * Detected change in '/home/runner/workspace/server.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 631-510-511
